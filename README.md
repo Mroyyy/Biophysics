@@ -41,6 +41,7 @@ To do that we used Biopython as a package tool iterating over the structure to g
 This process is repeated twice, first for those residues on the interface and the next cell for all residues of complex. What changes in this second cell of the script is that the MAXDIST variable is set to zero, these will provide information of the energy of all residues on the protein, not just the interface.
 
 Therefore, we achieved these results:
+
 ![res](https://user-images.githubusercontent.com/93529369/203763545-f00af95a-afc0-4012-82da-69193e287e51.png)
 
 We obtained a final dG of -172 selecting all residues and -82 for those residues participating on the contacts.
