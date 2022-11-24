@@ -122,3 +122,13 @@ Red: from 5 to +10 ΔG difference, therefore a critical or highest impact
 Orange: from 0.1 to 4.9 ΔG difference, not a big difference
 Grey: 0 difference, basically formed by Glycines
 ```
+
+## Results and discussion
+
+When we were doing the preparation to obtain a pdb with the molecule fixed, what we obtained was not the one we needed. Therefore, we decided to use the fixed pdb from Josep Lluís Gelpí in order to be able to perform the other steps properly, if not the results we obtained were too big. 
+
+In step 2, when we had to access the file called naccess, we encountered another problem. When we try to access the file while executing the script, it appears that we didn’t have the permissions required. To solve it, we had to change the path of the naccess file and then install csh on the terminal. Finally, execute the install file with this command:
+```ruby
+csh install.scr 
+```
+After doing this, we were able to execute the script correctly.
