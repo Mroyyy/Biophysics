@@ -24,7 +24,7 @@ To begin with we have to define a suitable list of interface residues, but befor
 
 2.- We looked for the polar contacts between any atoms and then using the tool wizard we measured the distance between those that visually seem to be interacting on the surface.
 
-As seen in the different distances, the longest one was **3.5Å** (between 505(TYR) and 37(GLU)), extent which we'll use to create a variable in the script.
+As seen in the different distances, the longest one was **3.5 Å** (between 505(TYR) and 37(GLU)), extent which we'll use to create a variable in the script.
 
 
 ## Second Step
@@ -32,7 +32,7 @@ As seen in the different distances, the longest one was **3.5Å** (between 505(T
 This second step consisted in evaluating the Interaction energy among chains (between components of A-E complex). This interaction energy is defined by the difference between the total energy of each chain in the bound state and the unbound state. But to simplify, we assumed the structure does not change from the complex to the isolation of both chains in solution. Additionaly, we considered solvation energies for all atom types.
 Thus, if we have the interface residues defined correctly, obtained values will be very similar. 
 
-To do that we used Biopython as a package tool iterating over the structure to get both chains and its corresponding residues ID's. 
+To do that we used Biopython as a package tool iterating over the structure to get both chains and its corresponding residues ID's. At that point it was just a matter of calling the different functions with the MAXDIST variable set to 3.5 Å which was previously selected in the first step.
 
 
 
