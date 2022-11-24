@@ -4,6 +4,14 @@ Here is the source code for an exercise about the **evaluation energy Spike RBD-
 
 ## Index
 
+* Preparation
+* Steps
+    - First Step
+    - Second Step
+    - Third Step
+    - Fourth Step
+ * Results and discussion
+
 ## Preparation
 
 From the PDB load the structure **6m0J**, which corresponds to the **Crystal structure of SARS-CoV-2 spike receptor-binding domain bound with ACE2**. Since we want only to know how interface residues contribute to the complex, we will perform a quality checking on the structure: add missing side-chains and
@@ -140,7 +148,7 @@ Orange: from 0.1 to 4.9 ΔG difference, not a big difference
 Grey: 0 difference, basically formed by Glycines
 ```
 
-![Captura desde 2022-11-24 19-25-58](https://user-images.githubusercontent.com/93529369/203847677-558a091c-2636-40f8-9a8a-3889586cf587.png) 
+![Captura desde 2022-11-24 19-25-58](https://user-images.githubusercontent.com/93529369/203847677-558a091c-2636-40f8-9a8a-3889586cf587.png)  ![Captura desde 2022-11-24 19-26-42](https://user-images.githubusercontent.com/93529369/203847753-5ae81caa-18d8-461a-8ae2-8823d878e6ff.png)
 
 
 ## Results and discussion
