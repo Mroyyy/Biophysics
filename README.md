@@ -111,7 +111,7 @@ The results we have obtained are either negative, positive or 0. A negative ΔΔ
 Lastly, we have to compute a plot where we put the binding energy in the y axis and the residue ID on the x axis. As we wanted to observe the residues that are more relevant to the stability, we decided to put the binding energy in absolute values in order to have  everything positive.  In that way,  we are able to see that the values that are higher are the ones that have a higher impact on the structure of the protein. However, later we have to look if this change affects the protein positively or negatively.
 Here you can observe the plot:
 
-![Biophysics_plot](https://user-images.githubusercontent.com/93529369/203798167-101d174f-aae4-4c2a-a8e8-171b61c08323.png)
+![plot](https://user-images.githubusercontent.com/93529369/203806032-bce383b0-c1c8-442c-9fb0-c05a8ca12096.png)
 
 ## Fourth step
 
