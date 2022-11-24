@@ -48,7 +48,7 @@ We obtained a final dG of -172 selecting all residues and -82 for those residues
 ## Third step
 
 In this step we had to determine the effect of replacing each interface residue with Ala throughout ΔGA-B and plot the obtained results, highlighting those residues that are more relevant to the interface stability.
-To calculate this we just added some code:
+To calculate this we just added some lines of code:
 
 ```ruby
 with open("res_ala.txt", "a") as res_ala:
@@ -61,8 +61,13 @@ with open("res_ala.txt", "a") as res_ala:
                         solvAB_ala[res] -solvA[res] + solvA_ala[res]), file = res_ala)
 ```
 
+Since the side-chain of Alanine is part of all the other residues, we just had to take into account the atoms that form this residue. Thus, before running this piece of code we established:
 
+```ruby
+#Possible Atom names that correspond to Ala atoms"
+ala_atoms = {'N', 'H', 'CA', 'HA', 'C', 'O', 'CB', 'HB', 'HB1', 'HB2', 'HB3', 'HA1', 'HA2', 'HA3'}
+```
 
+As we can see from this image (with a few examples of residues) the side-chain of Alanine is what constitutes the others basic structures. With an excepcion of the Glycine, which is the simplest residues we'll find, with Glycine there is no nedd to replace anything because it won't make a huge change.
 
- as Ala side-chain is part of all others, except Gly, there no need to do the
-replacement, just take into account the different atoms)
+![amino](https://user-images.githubusercontent.com/93529369/203766681-b0d994cf-30cb-408e-8abb-e97b2dbbed61.png)
