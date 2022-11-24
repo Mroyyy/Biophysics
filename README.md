@@ -20,9 +20,11 @@ The following are the results before running the script and after. If we observe
 To begin with we have to define a suitable list of interface residues, but before running the script we wanted to visualize and differentiate the two structures as well as select the atoms that could be a part of the interface and find polar bonds. To do so we used Pymol following the next steps:
 
 1.- Show both chains Angiotensin Converting Enzyme (ACE2) and SPIKE protein S1 as lines.
-![3](https://user-images.githubusercontent.com/93529369/203757404-227e1479-45a0-40b4-9e95-a66bed6134b7.png)
 
 2.- We looked for the polar contacts between any atoms and then using the tool wizard we measured the distance between those that visually seem to be interacting on the surface.
+
+![Captura de pantalla 2022-11-15 a las 15 52 01](https://user-images.githubusercontent.com/93529369/203799487-260ea475-c7cb-45a5-a0a8-124621a9591c.png)
+
 
 As seen in the different distances, the longest one was **3.5 Å** (between 505(TYR) and 37(GLU)), extent which we'll use to create a variable in the script.
 
@@ -69,6 +71,54 @@ Since the side-chain of Alanine is part of all the other residues, we just had t
 ala_atoms = {'N', 'H', 'CA', 'HA', 'C', 'O', 'CB', 'HB', 'HB1', 'HB2', 'HB3', 'HA1', 'HA2', 'HA3'}
 ```
 
-As we can see from this image (with a few examples of residues) the side-chain of Alanine is what constitutes the others basic structures. With an excepcion of the Glycine, which is the simplest residues we'll find, with Glycine there is no nedd to replace anything because it won't make a huge change.
+As we can see from this image (with a few examples of residues) the side-chain of Alanine is what constitutes the others basic structure. With an excepcion of the Glycine, which is the simplest residues we'll find, with Glycine there is no nedd to replace anything because it won't make any change.
 
 ![amino](https://user-images.githubusercontent.com/93529369/203766681-b0d994cf-30cb-408e-8abb-e97b2dbbed61.png)
+
+The results obtained are in a file called 'res_ala.txt'
+```
+GLN A24, 3.334
+PHE A28, -0.7887
+ASP A30, 6.292
+LYS A31, 8.02
+HIE A34, 5.351
+GLU A35, 4.779
+GLU A37, 4.999
+ASP A38, 4.695
+TYR A41, 3.858
+GLN A42, 9.785
+TYR A83, 3.01
+LYS A353, 7.583
+GLY A354, 0.0
+ASP A355, 2.562
+LYS E417, 4.925
+GLY E446, 0.0
+TYR E449, -10.57
+TYR E453, -2.924
+ASN E487, 2.757
+TYR E489, 0.843
+GLN E493, 10.61
+GLY E496, 0.0
+GLN E498, 8.258
+THR E500, -0.6821
+ASN E501, 4.609
+GLY E502, 0.0
+TYR E505, -1.336
+```
+
+In the last column appears the overall ΔG of the change of the residue in the first column for an Alanine. For example, if we look in the first row we make a change from GLN A24 (chain A residue number 24) to an Alanine and we obtain a ΔG of 3.334. With these overall ΔG we are able to tell the impact that the mutation has. 
+The results we have obtained are either negative, positive or 0. A negative ΔΔG indicates that the mutation provides stability.
+Lastly, we have to compute a plot where we put the binding energy in the y axis and the residue ID on the x axis. As we wanted to observe the residues that are more relevant to the stability, we decided to put the binding energy in absolute values in order to have  everything positive.  In that way,  we are able to see that the values that are higher are the ones that have a higher impact on the structure of the protein. However, later we have to look if this change affects the protein positively or negatively.
+Here you can observe the plot:
+
+![Biophysics_plot](https://user-images.githubusercontent.com/93529369/203798167-101d174f-aae4-4c2a-a8e8-171b61c08323.png)
+
+## Fourth step
+
+Just to wrap the project we prepared a session on Pymol following a legend, also with the absolute values, since we want to know the impact:
+
+```
+Red: from 5 to +10 ΔG difference, therefore a critical or highest impact
+Orange: from 0.1 to 4.9 ΔG difference, not a big difference
+Grey: 0 difference, basically formed by Glycines
+```
