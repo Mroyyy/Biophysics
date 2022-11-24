@@ -73,7 +73,7 @@ ala_atoms = {'N', 'H', 'CA', 'HA', 'C', 'O', 'CB', 'HB', 'HB1', 'HB2', 'HB3', 'H
 
 As we can see from this image the side-chain of Alanine is what constitutes the others basic structure. With an excepcion of the Glycine, which is the simplest residues we'll find, with Glycine there is no need to replace anything because it won't make any change.
 
-![alan](https://user-images.githubusercontent.com/93529369/203818410-86f79ada-0d22-41d4-aa58-8fa8984cd1c5.png)
+![Captura desde 2022-11-24 16-21-09](https://user-images.githubusercontent.com/93529369/203818759-2acfba18-e762-4ac3-b7f0-6cdba1676624.png)
 
 The results obtained are in a file called 'res_ala.txt'
 ```
