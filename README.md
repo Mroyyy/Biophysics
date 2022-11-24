@@ -30,13 +30,14 @@ As seen in the different distances, the longest one was **3.5 Å** (between 505(
 ## Second Step
 
 This second step consisted in evaluating the Interaction energy among chains (between components of A-E complex). This interaction energy is defined by the difference between the total energy of each chain in the bound state and the unbound state. But to simplify, we assumed the structure does not change from the complex to the isolation of both chains in solution. Additionaly, we considered solvation energies for all atom types.
+
+Considering these points, interaction energy between components of a A-B complex (in this case A-E) will come from the following formula:
+![formula](https://user-images.githubusercontent.com/93529369/203762378-233e1e8f-fdf9-4a99-ba2f-e75f913fda6a.png)
+
+Basically, what is stating is that the binding energy comes from the difference of electrostatic, Van der Waals and solvation energy between A and B, minus the solvation energy individually of each chain.
 Thus, if we have the interface residues defined correctly, obtained values will be very similar. 
 
-To do that we used Biopython as a package tool iterating over the structure to get both chains and its corresponding residues ID's. At that point it was just a matter of calling the different functions with the MAXDIST variable set to 3.5 Å which was previously selected in the first step.
-
-
-
-we iterated residue by residue and computed the necessary energies for each one. We added everything using the formula to obtain the total energy.
-We repeated this process twice, one for all the residues and another one for the interface residues.
+To do that we used Biopython as a package tool iterating over the structure to get both chains and its corresponding residues ID's. At that point it was just a matter of calling the different functions with the MAXDIST (cut-off distance) variable set to 3.5 Å which was previously selected in the first step. (All script commented at file named 'energy_evaluation.ipynb').
+This process is repeated twice, first for those residues on the interface and the next cell for all residues of complex. What changes in this second cell of the script is that the MAXDIST variable is set to zero, these will provide information of the energy of all residues on the protein, not just the interface.
 
 
