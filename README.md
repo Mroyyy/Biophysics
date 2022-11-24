@@ -148,8 +148,7 @@ Orange: from 0.1 to 4.9 ΔG difference, not a big difference
 Grey: 0 difference, basically formed by Glycines
 ```
 
-![Captura desde 2022-11-24 19-25-58](https://user-images.githubusercontent.com/93529369/203847677-558a091c-2636-40f8-9a8a-3889586cf587.png)  ![Captura desde 2022-11-24 19-26-42](https://user-images.githubusercontent.com/93529369/203847753-5ae81caa-18d8-461a-8ae2-8823d878e6ff.png)
-
+![Captura desde 2022-11-24 19-25-58](https://user-images.githubusercontent.com/93529369/203847677-558a091c-2636-40f8-9a8a-3889586cf587.png)  ![Captura desde 2022-11-24 19-29-20](https://user-images.githubusercontent.com/93529369/203848018-66f8279b-d30d-4478-a33f-29864d94f398.png)
 
 ## Results and discussion
 
