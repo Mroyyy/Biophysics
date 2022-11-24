@@ -40,4 +40,29 @@ Thus, if we have the interface residues defined correctly, obtained values will 
 To do that we used Biopython as a package tool iterating over the structure to get both chains and its corresponding residues ID's. At that point it was just a matter of calling the different functions with the MAXDIST (cut-off distance) variable set to 3.5 Å which was previously selected in the first step. (All script commented at file named 'energy_evaluation.ipynb').
 This process is repeated twice, first for those residues on the interface and the next cell for all residues of complex. What changes in this second cell of the script is that the MAXDIST variable is set to zero, these will provide information of the energy of all residues on the protein, not just the interface.
 
+Therefore, we achieved these results:
+![res](https://user-images.githubusercontent.com/93529369/203763545-f00af95a-afc0-4012-82da-69193e287e51.png)
 
+We obtained a final dG of -172 selecting all residues and -82 for those residues participating on the contacts.
+
+## Third step
+
+In this step we had to determine the effect of replacing each interface residue with Ala throughout ΔGA-B and plot the obtained results, highlighting those residues that are more relevant to the interface stability.
+To calculate this we just added some code:
+
+```ruby
+with open("res_ala.txt", "a") as res_ala:
+    for ch in st[0]:
+        for res in ch.get_residues():
+            if MAXDIST > 0 and res not in interface[ch.id]:
+                continue
+            print('{:1}, {:1.4}'.format(residue_id(res),
+                    - elec[res] + elec_ala[res] - vdw[res] + vdw_ala[res] -solvAB[res] +\
+                        solvAB_ala[res] -solvA[res] + solvA_ala[res]), file = res_ala)
+```
+
+
+
+
+ as Ala side-chain is part of all others, except Gly, there no need to do the
+replacement, just take into account the different atoms)
