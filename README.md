@@ -71,9 +71,9 @@ Since the side-chain of Alanine is part of all the other residues, we just had t
 ala_atoms = {'N', 'H', 'CA', 'HA', 'C', 'O', 'CB', 'HB', 'HB1', 'HB2', 'HB3', 'HA1', 'HA2', 'HA3'}
 ```
 
-As we can see from this image (with a few examples of residues) the side-chain of Alanine is what constitutes the others basic structure. With an excepcion of the Glycine, which is the simplest residues we'll find, with Glycine there is no nedd to replace anything because it won't make any change.
+As we can see from this image the side-chain of Alanine is what constitutes the others basic structure. With an excepcion of the Glycine, which is the simplest residues we'll find, with Glycine there is no need to replace anything because it won't make any change.
 
-![amino](https://user-images.githubusercontent.com/93529369/203766681-b0d994cf-30cb-408e-8abb-e97b2dbbed61.png)
+![alan](https://user-images.githubusercontent.com/93529369/203818410-86f79ada-0d22-41d4-aa58-8fa8984cd1c5.png)
 
 The results obtained are in a file called 'res_ala.txt'
 ```
