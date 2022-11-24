@@ -175,3 +175,10 @@ To start with the TYR E449, one of the critical residues on these structure,  wh
 We have to take into account the distance in which the amino acid is from the other chain, because when we replace it with alanine it can happen that they do not interact. That 's because the alanine can be shorter and therefore it cannot achieve contact. Consequently, in some cases the change of the amino acid stabilizes and others destabilize.
 That’s the case of the TYR A41, when we substitute that residue for an alanine it destabilizes because the difference of the binding energy is positive.
 
+Then we have glutamine (GLN E493, GLN A42, GLN E498) which is polar, therefore hydrophilic, it will create contacts with the water that surrounds the structure, if we change to Alanine which is hydrophobic, it destabilizes the structure by not creating contacts with the water.
+
+Moreover we have Lysine (LYS A353) which is a polar positively charged amino acid. Note that the side chain has three methylene groups, so that even though the terminal amino group will be charged under physiological conditions, the side chain does have significant hydrophobic character. Lysines are often found buried with only the amino group exposed to solvent. Thus, if we change this type of residue with an alanine, which is an apolar amino acid, we can observe how the structure destabilizes
+
+Additionally, we have Aspartic acid (ASP A30) that is one of the two acidic amino acids (polar negatively charged). Just as the Lysine, Aspartic Acid is polar, unlike alanine, therefore the change will destabilize the structure, since some bonds that were made with water are no longer there.
+
+Then we find a follow-up of amino acids with little impact, it may be because the change in properties between the two is not limiting in terms of stability or because the distance is more or less maintained in the  previous contact.
