@@ -28,6 +28,23 @@ To begin with we have to define a suitable list of interface residues, but befor
 
 As seen in the different distances, the longest one was **3.5 Å** (between 505(TYR) and 37(GLU)), extent which we'll use to create a variable in the script.
 
+```
+GLN A 24 OE1 : ASN E 487 ND2 : 2.687678
+ASP A 30 OD2 : LYS E 417 NZ : 2.9049046
+LYS A 31 NZ : GLN E 493 OE1 : 2.925601
+GLU A 35 OE2 : GLN E 493 OE1 : 3.4952347
+GLU A 37 OE2 : TYR E 505 OH : 3.4565377
+ASP A 38 OD2 : TYR E 449 OH : 2.6951609
+TYR A 41 OH : ASN E 501 OD1 : 3.4305587
+TYR A 41 OH : THR E 500 OG1 : 2.7074692
+GLN A 42 NE2 : GLN E 498 OE1 : 2.9271529
+GLN A 42 NE2 : TYR E 449 OH : 2.7875116
+GLN A 42 NE2 : GLY E 446 O : 3.2436583
+TYR A 83 OH : ASN E 487 OD1 : 2.7878785
+LYS A 353 O : GLY E 502 N : 2.7837358
+LYS A 353 NZ : GLY E 496 O : 3.084003
+ASP A 355 OD2 : THR E 500 O : 3.3421304
+```
 
 ## Second Step
 
@@ -122,6 +139,9 @@ Red: from 5 to +10 ΔG difference, therefore a critical or highest impact
 Orange: from 0.1 to 4.9 ΔG difference, not a big difference
 Grey: 0 difference, basically formed by Glycines
 ```
+
+![Captura desde 2022-11-24 19-25-58](https://user-images.githubusercontent.com/93529369/203847677-558a091c-2636-40f8-9a8a-3889586cf587.png) 
+
 
 ## Results and discussion
 
