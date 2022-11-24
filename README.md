@@ -29,7 +29,7 @@ To begin with we have to define a suitable list of interface residues, but befor
 
 1.- Show both chains Angiotensin Converting Enzyme (ACE2) and SPIKE protein S1 as lines.
 
-2.- We looked for the polar contacts between any atoms and then using the tool wizard we measured the distance between those that visually seem to be interacting on the surface.
+2.- We looked for the polar contacts between any atoms and then using the tool **wizard** we measured the distance between those that visually seem to be interacting on the surface.
 
 ![Captura de pantalla 2022-11-15 a las 15 52 01](https://user-images.githubusercontent.com/93529369/203799487-260ea475-c7cb-45a5-a0a8-124621a9591c.png)
 
@@ -56,7 +56,7 @@ ASP A 355 OD2 : THR E 500 O : 3.3421304
 
 ## Second Step
 
-This second step consisted in evaluating the Interaction energy among chains (between components of A-E complex). This interaction energy is defined by the difference between the total energy of each chain in the bound state and the unbound state. But to simplify, we assumed the structure does not change from the complex to the isolation of both chains in solution. Additionaly, we considered solvation energies for all atom types.
+This second step consisted in **evaluating the Interaction energy among chains** (between components of A-E complex). This interaction energy is defined by the difference between the total energy of each chain in the bound state and the unbound state. But to simplify, **we assumed the structure does not change from the complex to the isolation of both chains in solution**. Additionaly, we considered solvation energies for all atom types.
 
 Considering these points, interaction energy between components of a A-B complex (in this case A-E) will come from the following formula:
 ![formula](https://user-images.githubusercontent.com/93529369/203762378-233e1e8f-fdf9-4a99-ba2f-e75f913fda6a.png)
@@ -64,8 +64,8 @@ Considering these points, interaction energy between components of a A-B complex
 Basically, what is stating is that the binding energy comes from the difference of electrostatic, Van der Waals and solvation energy between A and B, minus the solvation energy individually of each chain.
 Thus, if we have the interface residues defined correctly, obtained values will be very similar. 
 
-To do that we used Biopython as a package tool iterating over the structure to get both chains and its corresponding residues ID's. At that point it was just a matter of calling the different functions with the MAXDIST (cut-off distance) variable set to 3.5 Å which was previously selected in the first step. (All script commented at file named 'energy_evaluation.ipynb').
-This process is repeated twice, first for those residues on the interface and the next cell for all residues of complex. What changes in this second cell of the script is that the MAXDIST variable is set to zero, these will provide information of the energy of all residues on the protein, not just the interface.
+To do that we used **Biopython** as a package tool iterating over the structure to get both chains and its corresponding residues ID's. At that point it was just a matter of calling the different functions with the MAXDIST (cut-off distance) variable set to 3.5 Å which was previously selected in the first step. (All script commented at file named 'energy_evaluation.ipynb').
+This process is repeated twice, first for those residues on the interface and the next cell for all residues of complex. What changes in this second cell of the script is that the **MAXDIST variable is set to zero**, these will provide information of the energy of all residues on the protein, not just the interface.
 
 Therefore, we achieved these results:
 
@@ -75,7 +75,7 @@ We obtained a final dG of -172 selecting all residues and -82 for those residues
 
 ## Third step
 
-In this step we had to determine the effect of replacing each interface residue with Ala throughout ΔGA-B and plot the obtained results, highlighting those residues that are more relevant to the interface stability.
+In this step we had to determine the **effect of replacing each interface residue with Alanine** throughout ΔGA-B and plot the obtained results, highlighting those residues that are more relevant to the interface stability.
 To calculate this we just added some lines of code:
 
 ```ruby
@@ -96,7 +96,7 @@ Since the side-chain of Alanine is part of all the other residues, we just had t
 ala_atoms = {'N', 'H', 'CA', 'HA', 'C', 'O', 'CB', 'HB', 'HB1', 'HB2', 'HB3', 'HA1', 'HA2', 'HA3'}
 ```
 
-As we can see from this image the side-chain of Alanine is what constitutes the others basic structure. With an excepcion of the Glycine, which is the simplest residues we'll find, with Glycine there is no need to replace anything because it won't make any change.
+As we can see from this image the side-chain of Alanine is what constitutes the others basic structure. With an exception of the Glycine, which is the simplest residues we'll find, with Glycine there is no need to replace anything because it won't make any change.
 
 ![Captura desde 2022-11-24 16-21-09](https://user-images.githubusercontent.com/93529369/203818759-2acfba18-e762-4ac3-b7f0-6cdba1676624.png)
 
@@ -132,11 +132,13 @@ TYR E505, -1.336
 ```
 
 In the last column appears the overall ΔG of the change of the residue in the first column for an Alanine. For example, if we look in the first row we make a change from GLN A24 (chain A residue number 24) to an Alanine and we obtain a ΔG of 3.334. With these overall ΔG we are able to tell the impact that the mutation has. 
-The results we have obtained are either negative, positive or 0. A negative ΔΔG indicates that the mutation provides stability.
-Lastly, we have to compute a plot where we put the binding energy in the y axis and the residue ID on the x axis. As we wanted to observe the residues that are more relevant to the stability, we decided to put the binding energy in absolute values in order to have  everything positive.  In that way,  we are able to see that the values that are higher are the ones that have a higher impact on the structure of the protein. However, later we have to look if this change affects the protein positively or negatively.
+The results we have obtained are either negative, positive or 0. A **negative ΔΔG** indicates that the **mutation provides stability**.
+Lastly, we have to compute a plot where we put the binding energy in the y axis and the residue ID on the x axis. As we wanted to observe the residues that are more relevant to the stability, we decided to put the **binding energy in absolute values** in order to have  everything positive.  In that way,  we are able to see that the values that are higher are the ones that have a **higher impact** on the structure of the protein. However, later we have to look if this change affects the protein positively or negatively.
 Here you can observe the plot:
 
 ![plot](https://user-images.githubusercontent.com/93529369/203806032-bce383b0-c1c8-442c-9fb0-c05a8ca12096.png)
+
+Since all the magnitudes are in absolute value, the highest peaks will reflect the essential positions in the interface and how it will alter the complex.
 
 ## Fourth step
 
@@ -159,3 +161,17 @@ In step 2, when we had to access the file called naccess, we encountered another
 csh install.scr 
 ```
 After doing this, we were able to execute the script correctly.
+
+### Conclusions
+
+After following all the steps we’ve obtained some conclusions:
+We’ve been able to observe the complex structure and visualize the interactions between residues. Using Pymol we’ve found the interface atoms, polar bonds and distances. In this case, the longest distance was 3.5 Å between aminoacids 505(TYR) and 37(GLU). Furthermore, we have to take into account that it is a *Crystal structure* made with an **X-ray diffraction method**, therefore the distance will not be exactly the same, but we have to know that in reality it may vary a bit.
+
+We have evaluated the energy interaction between the two chains and when comparing the total energy of all the residues with the total energy of the interface residues we have obtained both DG negatives and the results are quite similar which means that the cut-off distance was correctly calculated.
+
+By performing the alanine change we’ve been able to see which are the most relevant residues for the stability of the interface:
+
+To start with the TYR E449, one of the critical residues on these structure,  which gave us an  ΔGA-B of  -10.57 in step 3, we know that the tyrosine is a hydrophobic amino acid, with an aromatic ring that makes it much more hydrophobic. When we substitute it by an alanine (that is less hydrophobic) it is possible that it comes into contact with water and therefore creates more overall stability. 
+We have to take into account the distance in which the amino acid is from the other chain, because when we replace it with alanine it can happen that they do not interact. That 's because the alanine can be shorter and therefore it cannot achieve contact. Consequently, in some cases the change of the amino acid stabilizes and others destabilize.
+That’s the case of the TYR A41, when we substitute that residue for an alanine it destabilizes because the difference of the binding energy is positive.
+
