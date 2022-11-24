@@ -1,0 +1,6 @@
+Total Electrostatic:  3.3065118043976534
+Total Vdw:  -103.26957595440193
+Total Solvation Complex:  -7.543442000000002
+Total Solv  A -22.269666
+Total Solv  E -2.3854149999999956
+DG AB-A-B -82.85142515000429
