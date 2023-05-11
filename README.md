@@ -1,23 +1,21 @@
 # Biophysics
 ```ruby
-CHECK_NULL ((s1l = (short *) malloc (sizeof (short) * (nrows + 1))));
+for (i = 1; i <= nrows; i++)
+	for (j = jj; j < min(jj+BS,dim2+1); j++)
 ```
 
 ```ruby
-MPI_Scatter( s1+1, nrows, MPI_SHORT, s1l+1, nrows, MPI_SHORT, 0, MPI_COMM_WORLD );
+MPI_Send( &h[nrows][jj], min(BS,dim2-jj+1), MPI_INT, rank+1, 1, MPI_COMM_WORLD );
 ```
 
 ```ruby
-MPI_Bcast( s2+1, dim2, MPI_SHORT, 0, MPI_COMM_WORLD );
+MPI_Allreduce(localres, globalres, 1, MPI_2INT, MPI_MAXLOC, MPI_COMM_WORLD );
 ```
 
 ```ruby
-dim1sz = (rank ? nrows : dim1); /* condition ? true_case : false_case */
+if ( rank == 0 )
 ```
 
-```ruby
-MPI_Recv( &h[0][jj], min(BS,dim2-jj+1), MPI_INT, rank-1, 1, MPI_COMM_WORLD, &status );
-```
 
 
 Here is the source code for an exercise about the **evaluation energy Spike RBD-ACE2 protein-protein interface analysis** using Jupyter-notebook. The objective of this project was to evaluate the contribution of each of the interface residues to the interaction energy in a specific protein-protein complex. 
