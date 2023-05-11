@@ -1,26 +1,22 @@
 # Biophysics
 ```ruby
-#include <mpi.h>
+CHECK_NULL ((s1l = (short *) malloc (sizeof (short) * (nrows + 1))));
 ```
 
 ```ruby
-#define min(a,b) (((a)<(b)) ? (a) : (b))
+MPI_Scatter( s1+1, nrows, MPI_SHORT, s1l+1, nrows, MPI_SHORT, 0, MPI_COMM_WORLD );
 ```
 
 ```ruby
-if (rank==0)
+MPI_Bcast( s2+1, dim2, MPI_SHORT, 0, MPI_COMM_WORLD );
 ```
 
 ```ruby
-MPI_Bcast(&dim1, 1, MPI_INT, 0, MPI_COMM_WORLD);
-MPI_Bcast(&dim2, 1, MPI_INT, 0, MPI_COMM_WORLD); 
-MPI_Bcast(&BS, 1, MPI_INT, 0, MPI_COMM_WORLD); 
-MPI_Bcast(&DELTA, 1, MPI_INT, 0, MPI_COMM_WORLD); 
-MPI_Bcast(sim, AA*AA, MPI_INT, 0, MPI_COMM_WORLD); 
+dim1sz = (rank ? nrows : dim1); /* condition ? true_case : false_case */
 ```
 
 ```ruby
-nrows = getRowCount(dim1, rank, nprocs);
+MPI_Recv( &h[0][jj], min(BS,dim2-jj+1), MPI_INT, rank-1, 1, MPI_COMM_WORLD, &status );
 ```
 
 
