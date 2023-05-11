@@ -3,6 +3,27 @@
 #include <mpi.h>
 ```
 
+```ruby
+#define min(a,b) (((a)<(b)) ? (a) : (b))
+```
+
+```ruby
+if (rank==0)
+```
+
+```ruby
+MPI_Bcast(&dim1, 1, MPI_INT, 0, MPI_COMM_WORLD);
+MPI_Bcast(&dim2, 1, MPI_INT, 0, MPI_COMM_WORLD); 
+MPI_Bcast(&BS, 1, MPI_INT, 0, MPI_COMM_WORLD); 
+MPI_Bcast(&DELTA, 1, MPI_INT, 0, MPI_COMM_WORLD); 
+MPI_Bcast(sim, AA*AA, MPI_INT, 0, MPI_COMM_WORLD); 
+```
+
+```ruby
+nrows = getRowCount(dim1, rank, nprocs);
+```
+
+
 Here is the source code for an exercise about the **evaluation energy Spike RBD-ACE2 protein-protein interface analysis** using Jupyter-notebook. The objective of this project was to evaluate the contribution of each of the interface residues to the interaction energy in a specific protein-protein complex. 
 
 ## Index
