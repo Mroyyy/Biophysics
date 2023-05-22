@@ -1,38 +1,14 @@
 # Biophysics
 
 ```ruby
-[biohpc-28@clus-login OpenMP]$  ./2.hello 
-(0) Hello (2) Hello (0) world!
-(4) Hello (4) world!
-(6) Hello (6) world!
-(2) world!
-(3) Hello (3) world!
-(7) Hello (7) world!
-(5) Hello (5) world!
-(1) Hello (1) world!
+[biohpc-28@clus-login OpenMP]$  
 ```
 
 ```ruby
-[biohpc-28@clus-login OpenMP]$ ./2.hello 
-(4) Hello (7) Hello (7) world!
-(13) Hello (0) Hello (13) world!
-(3) Hello (15) Hello (3) world!
-(9) Hello (9) world!
-(8) Hello (8) world!
-(1) Hello (1) world!
-(10) Hello (10) world!
-(2) Hello (2) world!
-(14) Hello (14) world!
-(15) world!
-(5) Hello (5) world!
-(11) Hello (11) world!
-(0) world!
-(6) Hello (6) world!
-(12) Hello (12) world!
-(4) world!
+[biohpc-28@clus-login OpenMP]$ 
 ```
 ```ruby
-[biohpc-28@clus-login OpenMP]$ #include <stdio.h>
+#include <stdio.h>
 #include <omp.h>
 #include <unistd.h>
 
