@@ -1,30 +1,21 @@
 # Biophysics
 
 ```ruby
-#pragma omp parallel
-printf("Hello world from the first parallel!\n");
+Hello world from the first parallel!
+Hello world from the first parallel!
+Hello world from the first parallel!
+Hello world from the first parallel!
+Hello world from the second parallel!
+Hello world from the second parallel!
+Hello world from the third parallel!
+Hello world from the third parallel!
+Hello world from the third parallel!
+Hello world from the fourth  parallel!
+Hello world from the fourth  parallel!
+Hello world from the fifth parallel!
 ```
 
-```ruby
-omp_set_num_threads(2);
-#pragma omp parallel
-printf("Hello world from the second parallel!\n");
-```
 
-```ruby
-#pragma omp parallel num_threads(3)
-printf("Hello world from the third parallel!\n");
-```
-
-```ruby
-#pragma omp parallel
-printf("Hello world from the fourth parallel!\n");
-```
-```ruby
-srand(time(0));
-#pragma omp parallel num_threads(rand()%4+1)  if(0) 
-printf("Hello world from the fifth parallel!\n");
-```
 
 Here is the source code for an exercise about the **evaluation energy Spike RBD-ACE2 protein-protein interface analysis** using Jupyter-notebook. The objective of this project was to evaluate the contribution of each of the interface residues to the interaction energy in a specific protein-protein complex. 
 
