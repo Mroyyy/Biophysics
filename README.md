@@ -1,19 +1,59 @@
 # Biophysics
 
 ```ruby
-Hello world from the first parallel!
-Hello world from the first parallel!
-Hello world from the first parallel!
-Hello world from the first parallel!
-Hello world from the second parallel!
-Hello world from the second parallel!
-Hello world from the third parallel!
-Hello world from the third parallel!
-Hello world from the third parallel!
-Hello world from the fourth  parallel!
-Hello world from the fourth  parallel!
-Hello world from the fifth parallel!
+[biohpc-28@clus-login OpenMP]$ ./1.hello 
+Hello world!
+Hello world!
+Hello world!
+Hello world!
 ```
+
+```ruby
+[biohpc-28@clus-login OpenMP]$ lscpu
+Architecture:          x86_64
+CPU op-mode(s):        32-bit, 64-bit
+Byte Order:            Little Endian
+CPU(s):                4
+On-line CPU(s) list:   0-3
+```
+```ruby
+[biohpc-28@clus-login OpenMP]$ export OMP_NUM_THREADS=6
+[biohpc-28@clus-login OpenMP]$ ./1.hello 
+Hello world!
+Hello world!
+Hello world!
+Hello world!
+Hello world!
+Hello world!
+```
+
+```ruby
+#include <stdio.h>
+#include <omp.h>
+
+int main ()
+{
+    omp_set_num_threads(6);
+    #pragma omp parallel    
+    printf("Hello world!\n");
+
+    return 0;
+}
+```
+```ruby
+[biohpc-28@clus-login OpenMP]$ ./1.hello 
+Hello world!
+Hello world!
+Hello world!
+Hello world!
+Hello world!
+Hello world!
+```
+```ruby
+[biohpc-28@clus-login OpenMP]$ 
+
+```
+
 
 
 
