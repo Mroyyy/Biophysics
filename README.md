@@ -1,38 +1,61 @@
 # Biophysics
 
 ```ruby
-[biohpc-28@clus-login OpenMP]$  ./2.hello 
-(1) Hello (9) Hello (9) world!
-(0) Hello (15) world!
-(4) Hello (15) world!
-(6) Hello (15) world!
-(8) Hello (15) world!
-(2) Hello (15) world!
-(10) Hello (15) world!
-(12) Hello (15) world!
-(14) Hello (15) world!
-(15) Hello (3) Hello (15) world!
-(7) Hello (15) world!
-(15) world!
-(11) Hello (15) world!
-(5) Hello (15) world!
-(13) Hello (15) world!
-(9) world!
+[biohpc-28@clus-login OpenMP]$  ./4.data_sharing 
+Within first parallel (shared) x is: 2
+Within first parallel (shared) x is: 9
+Within first parallel (shared) x is: 24
+Within first parallel (shared) x is: 5
+Within first parallel (shared) x is: 1
+Within first parallel (shared) x is: 6
+Within first parallel (shared) x is: 7
+Within first parallel (shared) x is: 8
+Within first parallel (shared) x is: 3
+Within first parallel (shared) x is: 10
+Within first parallel (shared) x is: 11
+Within first parallel (shared) x is: 12
+Within first parallel (shared) x is: 13
+Within first parallel (shared) x is: 14
+Within first parallel (shared) x is: 15
+Within first parallel (shared) x is: 16
+Within first parallel (shared) x is: 17
+Within first parallel (shared) x is: 18
+Within first parallel (shared) x is: 19
+Within first parallel (shared) x is: 20
+Within first parallel (shared) x is: 21
+Within first parallel (shared) x is: 22
+Within first parallel (shared) x is: 23
+Within first parallel (shared) x is: 4
+After first parallel (shared) x is: 24
+Within second parallel (private) x is: 1
+Within second parallel (private) x is: 1
+Within second parallel (private) x is: 1
+Within second parallel (private) x is: 1
+Within second parallel (private) x is: 1
+Within second parallel (private) x is: 1
+Within second parallel (private) x is: 1
+Within second parallel (private) x is: 1
+After second parallel (private) x is: 5
+Within third  parallel (first private) x is: 72
+Within third  parallel (first private) x is: 72
+Within third  parallel (first private) x is: 72
+Within third  parallel (first private) x is: 72
+Within third  parallel (first private) x is: 72
+Within third  parallel (first private) x is: 72
+Within third  parallel (first private) x is: 72
+Within third  parallel (first private) x is: 72
+After third  parallel (first private) x is: 71
+Whithin fourth parallel (last private) x is 8 an y is 3
+Whithin fourth parallel (last private) x is 9 an y is 3
+Whithin fourth parallel (last private) x is 7 an y is 3
+Whithin fourth parallel (last private) x is 3 an y is 3
+Whithin fourth parallel (last private) x is 2 an y is 3
+Whithin fourth parallel (last private) x is 5 an y is 3
+Whithin fourth parallel (last private) x is 6 an y is 3
+Whithin fourth parallel (last private) x is 4 an y is 3
+After fourth parallel (last private) x is 9 and y is 3
+
 ```
-
-```ruby
-[biohpc-28@clus-login OpenMP]$ ./2.hello 
-(0) Hello (7) world!
-(4) Hello (7) world!
-(5) Hello (7) world!
-(3) Hello (7) world!
-(7) Hello (7) world!
-(1) Hello (7) world!
-(2) Hello (7) world!
-(6) Hello (7) world!
-```
-
-
 
 ```ruby
 [biohpc-28@clus-login OpenMP]$ 
