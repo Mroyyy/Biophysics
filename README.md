@@ -1,53 +1,58 @@
 # Biophysics
 
 ```ruby
-[biohpc-28@clus-login OpenMP]$ ./1.hello 
-Hello world!
-Hello world!
-Hello world!
-Hello world!
+[biohpc-28@clus-login OpenMP]$  ./2.hello 
+(0) Hello (2) Hello (0) world!
+(4) Hello (4) world!
+(6) Hello (6) world!
+(2) world!
+(3) Hello (3) world!
+(7) Hello (7) world!
+(5) Hello (5) world!
+(1) Hello (1) world!
 ```
 
 ```ruby
-[biohpc-28@clus-login OpenMP]$ lscpu
-Architecture:          x86_64
-CPU op-mode(s):        32-bit, 64-bit
-Byte Order:            Little Endian
-CPU(s):                4
-On-line CPU(s) list:   0-3
+[biohpc-28@clus-login OpenMP]$ ./2.hello 
+(4) Hello (7) Hello (7) world!
+(13) Hello (0) Hello (13) world!
+(3) Hello (15) Hello (3) world!
+(9) Hello (9) world!
+(8) Hello (8) world!
+(1) Hello (1) world!
+(10) Hello (10) world!
+(2) Hello (2) world!
+(14) Hello (14) world!
+(15) world!
+(5) Hello (5) world!
+(11) Hello (11) world!
+(0) world!
+(6) Hello (6) world!
+(12) Hello (12) world!
+(4) world!
 ```
 ```ruby
-[biohpc-28@clus-login OpenMP]$ export OMP_NUM_THREADS=6
-[biohpc-28@clus-login OpenMP]$ ./1.hello 
-Hello world!
-Hello world!
-Hello world!
-Hello world!
-Hello world!
-Hello world!
-```
-
-```ruby
-#include <stdio.h>
+[biohpc-28@clus-login OpenMP]$ #include <stdio.h>
 #include <omp.h>
+#include <unistd.h>
 
 int main ()
 {
-    omp_set_num_threads(6);
-    #pragma omp parallel    
-    printf("Hello world!\n");
-
+   omp_set_num_threads(16);
+   #pragma omp parallel
+   {
+        int id;
+        id =omp_get_thread_num();
+        printf("(%d) Hello ",id);
+        printf("(%d) world!\n",id);
+    }
     return 0;
 }
 ```
+
+
 ```ruby
-[biohpc-28@clus-login OpenMP]$ ./1.hello 
-Hello world!
-Hello world!
-Hello world!
-Hello world!
-Hello world!
-Hello world!
+[biohpc-28@clus-login OpenMP]$ 
 ```
 ```ruby
 [biohpc-28@clus-login OpenMP]$ 
