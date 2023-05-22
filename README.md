@@ -1,30 +1,37 @@
 # Biophysics
 
 ```ruby
-[biohpc-28@clus-login OpenMP]$  
+[biohpc-28@clus-login OpenMP]$  ./2.hello 
+(1) Hello (9) Hello (9) world!
+(0) Hello (15) world!
+(4) Hello (15) world!
+(6) Hello (15) world!
+(8) Hello (15) world!
+(2) Hello (15) world!
+(10) Hello (15) world!
+(12) Hello (15) world!
+(14) Hello (15) world!
+(15) Hello (3) Hello (15) world!
+(7) Hello (15) world!
+(15) world!
+(11) Hello (15) world!
+(5) Hello (15) world!
+(13) Hello (15) world!
+(9) world!
 ```
 
 ```ruby
-[biohpc-28@clus-login OpenMP]$ 
+[biohpc-28@clus-login OpenMP]$ ./2.hello 
+(0) Hello (7) world!
+(4) Hello (7) world!
+(5) Hello (7) world!
+(3) Hello (7) world!
+(7) Hello (7) world!
+(1) Hello (7) world!
+(2) Hello (7) world!
+(6) Hello (7) world!
 ```
-```ruby
-#include <stdio.h>
-#include <omp.h>
-#include <unistd.h>
 
-int main ()
-{
-   omp_set_num_threads(16);
-   #pragma omp parallel
-   {
-        int id;
-        id =omp_get_thread_num();
-        printf("(%d) Hello ",id);
-        printf("(%d) world!\n",id);
-    }
-    return 0;
-}
-```
 
 
 ```ruby
