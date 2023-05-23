@@ -1,59 +1,51 @@
 # Biophysics
 
 ```ruby
-[biohpc-28@clus-login OpenMP]$  ./4.data_sharing 
-Within first parallel (shared) x is: 2
-Within first parallel (shared) x is: 9
-Within first parallel (shared) x is: 24
-Within first parallel (shared) x is: 5
-Within first parallel (shared) x is: 1
-Within first parallel (shared) x is: 6
-Within first parallel (shared) x is: 7
-Within first parallel (shared) x is: 8
-Within first parallel (shared) x is: 3
-Within first parallel (shared) x is: 10
-Within first parallel (shared) x is: 11
-Within first parallel (shared) x is: 12
-Within first parallel (shared) x is: 13
-Within first parallel (shared) x is: 14
-Within first parallel (shared) x is: 15
-Within first parallel (shared) x is: 16
-Within first parallel (shared) x is: 17
-Within first parallel (shared) x is: 18
-Within first parallel (shared) x is: 19
-Within first parallel (shared) x is: 20
-Within first parallel (shared) x is: 21
-Within first parallel (shared) x is: 22
-Within first parallel (shared) x is: 23
-Within first parallel (shared) x is: 4
-After first parallel (shared) x is: 24
-Within second parallel (private) x is: 1
-Within second parallel (private) x is: 1
-Within second parallel (private) x is: 1
-Within second parallel (private) x is: 1
-Within second parallel (private) x is: 1
-Within second parallel (private) x is: 1
-Within second parallel (private) x is: 1
-Within second parallel (private) x is: 1
-After second parallel (private) x is: 5
-Within third  parallel (first private) x is: 72
-Within third  parallel (first private) x is: 72
-Within third  parallel (first private) x is: 72
-Within third  parallel (first private) x is: 72
-Within third  parallel (first private) x is: 72
-Within third  parallel (first private) x is: 72
-Within third  parallel (first private) x is: 72
-Within third  parallel (first private) x is: 72
-After third  parallel (first private) x is: 71
-Whithin fourth parallel (last private) x is 8 an y is 3
-Whithin fourth parallel (last private) x is 9 an y is 3
-Whithin fourth parallel (last private) x is 7 an y is 3
-Whithin fourth parallel (last private) x is 3 an y is 3
-Whithin fourth parallel (last private) x is 2 an y is 3
-Whithin fourth parallel (last private) x is 5 an y is 3
-Whithin fourth parallel (last private) x is 6 an y is 3
-Whithin fourth parallel (last private) x is 4 an y is 3
-After fourth parallel (last private) x is 9 and y is 3
+[biohpc-28@clus-login OpenMP]$  ./5.parallel 
+Thread ID 1 Iter 1
+Thread ID 1 Iter 2
+Thread ID 1 Iter 3
+Thread ID 1 Iter 4
+Thread ID 1 Iter 5
+Thread ID 1 Iter 6
+Thread ID 1 Iter 7
+Thread ID 1 Iter 8
+Thread ID 1 Iter 9
+Thread ID 1 Iter 10
+Thread ID 1 Iter 11
+Thread ID 0 Iter 0
+Thread ID 0 Iter 1
+Thread ID 0 Iter 2
+Thread ID 0 Iter 3
+Thread ID 0 Iter 4
+Thread ID 0 Iter 5
+Thread ID 0 Iter 6
+Thread ID 0 Iter 7
+Thread ID 0 Iter 8
+Thread ID 0 Iter 9
+Thread ID 0 Iter 10
+Thread ID 0 Iter 11
+Thread ID 2 Iter 2
+Thread ID 2 Iter 3
+Thread ID 2 Iter 4
+Thread ID 2 Iter 5
+Thread ID 2 Iter 6
+Thread ID 2 Iter 7
+Thread ID 2 Iter 8
+Thread ID 2 Iter 9
+Thread ID 2 Iter 10
+Thread ID 2 Iter 11
+Thread ID 3 Iter 3
+Thread ID 3 Iter 4
+Thread ID 3 Iter 5
+Thread ID 3 Iter 6
+Thread ID 3 Iter 7
+Thread ID 3 Iter 8
+Thread ID 3 Iter 9
+Thread ID 3 Iter 10
+Thread ID 3 Iter 11
+
+
 
 ```
 
