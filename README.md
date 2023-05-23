@@ -1,15 +1,60 @@
 # Biophysics
 
 ```ruby
-[biohpc-28@clus-login OpenMP]$  ./5.parallel | wc -l
-42
+#include <stdio.h>
+#include <omp.h>
+#define N 12
+#define NUM_THREADS 4
+
+int main()
+{
+    #pragma omp parallel num_threads(NUM_THREADS) 
+    {
+        int id=omp_get_thread_num();
+        for (int i=id; i < N; i=i+1) {
+                printf("Thread ID %d Iter %d\n",id,i);
+        }
+    }
+    return 0;
+}
 ```
 
 ```ruby
-[biohpc-28@clus-login OpenMP]$ 
+[biohpc-28@clus-login OpenMP]$ ./5.parallel 
+Thread ID 0 Iter 0
+Thread ID 0 Iter 1
+Thread ID 0 Iter 2
+Thread ID 2 Iter 6
+Thread ID 2 Iter 7
+Thread ID 2 Iter 8
+Thread ID 1 Iter 3
+Thread ID 1 Iter 4
+Thread ID 1 Iter 5
+Thread ID 3 Iter 9
+Thread ID 3 Iter 10
+Thread ID 3 Iter 11
 ```
 ```ruby
-[biohpc-28@clus-login OpenMP]$ 
+#include <stdio.h>
+#include <omp.h>
+#define N 12
+#define NUM_THREADS 4
+
+int main()
+{
+    #pragma omp parallel num_threads(NUM_THREADS) 
+    {
+        int id=omp_get_thread_num();
+        int iter= (N+NUM_THREADS - 1)/NUM_THREADS;
+        int start = id * iter;
+        int end = (id + 1) * iter;
+        for (int i=start; i < end; i++) {
+                printf("Thread ID %d Iter %d\n",id,i);
+        }
+    }
+    return 0;
+}
+
 
 ```
 
