@@ -1,72 +1,42 @@
 # Biophysics
 
 ```ruby
-[biohpc-28@clus-login OpenMP]$ 
+[biohpc-28@clus-login OpenMP]$ ./7.barrier 
+(0) going to sleep for 2 seconds ...
+(1) going to sleep for 5 seconds ...
+(2) going to sleep for 8 seconds ...
+(3) going to sleep for 11 seconds ...
+(0) wakes up and enters barrier ...
+(1) wakes up and enters barrier ...
+(2) wakes up and enters barrier ...
+(3) wakes up and enters barrier ...
+(1) We are all awake!
+(0) We are all awake!
+(2) We are all awake!
+(3) We are all awake!
+```
+
+```ruby
+[biohpc-28@clus-login OpenMP]$  ./7.barrier 
+(1) going to sleep for 5 seconds ...
+(0) going to sleep for 2 seconds ...
+(2) going to sleep for 8 seconds ...
+(3) going to sleep for 11 seconds ...
+(0) wakes up and enters barrier ...
+(1) wakes up and enters barrier ...
+(2) wakes up and enters barrier ...
+(3) wakes up and enters barrier ...
+(3) We are all awake!
+(1) We are all awake!
+(0) We are all awake!
+(2) We are all awake!
+```
+```ruby
 
 ```
 
 ```ruby
-[biohpc-28@clus-login OpenMP]$ 
-```
-```ruby
-#include <stdio.h>
-#include <omp.h>
-#define N 1 << 10
-#define NUM_THREADS 12
 
-int main()
-{
-    int i, x=0;
-
-    omp_set_num_threads(NUM_THREADS);
-
-     #pragma omp parallel private(i) 
-     {
-        int id=omp_get_thread_num();
-
-        for (i=id; i < N; i+=NUM_THREADS) {
-                #pragma omp atomic   
-                x++;
-        }
-     }
-    printf ("N = %d \n", N);
-    if (x==N)
-         printf("Congratulations!, program executed correctly (x = %d)\n", x);
-    else
-         printf("Sorry, something went wrong, value of x = %d\n", x);
-
-    return 0;
-}
-```
-
-```ruby
-#include <stdio.h>
-#include <omp.h>
-#define N 1 << 10
-#define NUM_THREADS 12
-
-int main()
-{
-    int i, x=0;
-
-    omp_set_num_threads(NUM_THREADS);
-
-     #pragma omp parallel private(i) reduction(+:x)
-     {
-        int id=omp_get_thread_num();
-
-        for (i=id; i < N; i+=NUM_THREADS) {
-                x++;
-        }
-     }
-    printf ("N = %d \n", N);
-    if (x==N)
-         printf("Congratulations!, program executed correctly (x = %d)\n", x);
-    else
-         printf("Sorry, something went wrong, value of x = %d\n", x);
-
-    return 0;
-}
 ```
 
 
