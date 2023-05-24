@@ -10,8 +10,9 @@ int main()
 {
     #pragma omp parallel num_threads(NUM_THREADS) 
     {
-        int id=omp_get_thread_num();
-        for (int i=id; i < N; i=i+1) {
+        #pragma omp for schedule(static, 1)
+        for (int i=0; i < N; i=i+1) {
+                int id=omp_get_thread_num();
                 printf("Thread ID %d Iter %d\n",id,i);
         }
     }
