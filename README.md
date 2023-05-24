@@ -21,49 +21,18 @@ int main()
 
 ```ruby
 [biohpc-28@clus-login OpenMP]$ ./5.parallel 
-Thread ID 3 Iter 3
-Thread ID 3 Iter 4
-Thread ID 3 Iter 5
-Thread ID 3 Iter 6
-Thread ID 3 Iter 7
-Thread ID 3 Iter 8
-Thread ID 3 Iter 9
-Thread ID 3 Iter 10
-Thread ID 3 Iter 11
-Thread ID 2 Iter 2
-Thread ID 2 Iter 3
-Thread ID 2 Iter 4
-Thread ID 2 Iter 5
-Thread ID 2 Iter 6
-Thread ID 2 Iter 7
-Thread ID 2 Iter 8
-Thread ID 2 Iter 9
-Thread ID 2 Iter 10
-Thread ID 2 Iter 11
 Thread ID 0 Iter 0
-Thread ID 0 Iter 1
-Thread ID 0 Iter 2
-Thread ID 0 Iter 3
 Thread ID 0 Iter 4
-Thread ID 0 Iter 5
-Thread ID 0 Iter 6
-Thread ID 0 Iter 7
 Thread ID 0 Iter 8
-Thread ID 0 Iter 9
-Thread ID 0 Iter 10
-Thread ID 0 Iter 11
 Thread ID 1 Iter 1
-Thread ID 1 Iter 2
-Thread ID 1 Iter 3
-Thread ID 1 Iter 4
 Thread ID 1 Iter 5
-Thread ID 1 Iter 6
-Thread ID 1 Iter 7
-Thread ID 1 Iter 8
 Thread ID 1 Iter 9
-Thread ID 1 Iter 10
-Thread ID 1 Iter 11
-
+Thread ID 2 Iter 2
+Thread ID 2 Iter 6
+Thread ID 2 Iter 10
+Thread ID 3 Iter 3
+Thread ID 3 Iter 7
+Thread ID 3 Iter 11
 ```
 ```ruby
 #include <stdio.h>
