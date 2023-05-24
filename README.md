@@ -1,12 +1,7 @@
 # Biophysics
 
 ```ruby
-[biohpc-28@clus-login OpenMP]$ ./6.datarace 
-N = 1024 
-Congratulations!, program executed correctly (x = 1024)
-[biohpc-28@clus-login OpenMP]$ ./6.datarace 
-N = 1024 
-Sorry, something went wrong, value of x = 938
+[biohpc-28@clus-login OpenMP]$ 
 
 ```
 
@@ -25,12 +20,42 @@ int main()
 
     omp_set_num_threads(NUM_THREADS);
 
-     #pragma omp parallel private(i)
+     #pragma omp parallel private(i) 
      {
         int id=omp_get_thread_num();
 
         for (i=id; i < N; i+=NUM_THREADS) {
                 #pragma omp atomic   
+                x++;
+        }
+     }
+    printf ("N = %d \n", N);
+    if (x==N)
+         printf("Congratulations!, program executed correctly (x = %d)\n", x);
+    else
+         printf("Sorry, something went wrong, value of x = %d\n", x);
+
+    return 0;
+}
+```
+
+```ruby
+#include <stdio.h>
+#include <omp.h>
+#define N 1 << 10
+#define NUM_THREADS 12
+
+int main()
+{
+    int i, x=0;
+
+    omp_set_num_threads(NUM_THREADS);
+
+     #pragma omp parallel private(i) reduction(+:x)
+     {
+        int id=omp_get_thread_num();
+
+        for (i=id; i < N; i+=NUM_THREADS) {
                 x++;
         }
      }
