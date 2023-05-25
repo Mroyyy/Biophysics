@@ -1,5 +1,92 @@
 # Biophysics
 
+```ruby
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/time.h>
+#include <omp.h>        /* OpenMP */
+#define N 16
+
+
+int main()
+{
+    int i;
+
+    omp_set_num_threads(8);
+    #pragma omp parallel
+    {
+        #pragma omp single
+        printf("Going to distribute iterations in first loop ...\n");
+        #pragma omp for
+        for (i=0; i < N; i++) {
+                int id=omp_get_thread_num();
+                printf("(%d) gets iteration %d\n",id,i);
+        }
+    }
+
+    return 0;
+}
+```
+
+```ruby
+[biohpc-28@clus-login OpenMP]$ ./8.for 
+Going to distribute iterations in first loop ...
+Going to distribute iterations in first loop ...
+(1) gets iteration 2
+(1) gets iteration 3
+Going to distribute iterations in first loop ...
+(5) gets iteration 10
+(5) gets iteration 11
+Going to distribute iterations in first loop ...
+(2) gets iteration 4
+(2) gets iteration 5
+Going to distribute iterations in first loop ...
+(3) gets iteration 6
+(3) gets iteration 7
+Going to distribute iterations in first loop ...
+(7) gets iteration 14
+(7) gets iteration 15
+Going to distribute iterations in first loop ...
+(6) gets iteration 12
+(6) gets iteration 13
+(0) gets iteration 0
+(0) gets iteration 1
+Going to distribute iterations in first loop ...
+(4) gets iteration 8
+(4) gets iteration 9
+```
+
+```ruby
+[biohpc-28@clus-login OpenMP]$ ./9.schedule 
+Loop 1: (0) gets iteration 0
+Loop 1: (0) gets iteration 1
+Loop 1: (0) gets iteration 2
+Loop 1: (0) gets iteration 3
+Loop 1: (0) gets iteration 4
+Loop 1: (0) gets iteration 5
+Loop 1: (0) gets iteration 6
+Loop 1: (0) gets iteration 7
+Loop 1: (1) gets iteration 8
+Loop 1: (1) gets iteration 9
+Loop 1: (1) gets iteration 10
+Loop 1: (1) gets iteration 11
+Loop 1: (1) gets iteration 12
+Loop 1: (1) gets iteration 13
+Loop 1: (1) gets iteration 14
+Loop 1: (1) gets iteration 15
+Loop 1: (2) gets iteration 16
+Loop 1: (2) gets iteration 17
+Loop 1: (2) gets iteration 18
+Loop 1: (2) gets iteration 19
+Loop 1: (2) gets iteration 20
+Loop 1: (2) gets iteration 21
+Loop 1: (2) gets iteration 22
+Loop 1: (2) gets iteration 23
+
+```
+
+
+
 Here is the source code for an exercise about the **evaluation energy Spike RBD-ACE2 protein-protein interface analysis** using Jupyter-notebook. The objective of this project was to evaluate the contribution of each of the interface residues to the interaction energy in a specific protein-protein complex. 
 
 ## Index
