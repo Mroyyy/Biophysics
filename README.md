@@ -11,13 +11,23 @@ After first parallel (shared) x is: 2
 ```
 
 ```ruby
-[biohpc-28@clus-login OpenMP]$ 
+#pragma omp parallel shared(x) 
+    {
+        #pragma omp atomic
+        x++;
+        printf("Within first parallel (shared) x is: %d\n",x);
+    }
+    printf("After first parallel (shared) x is: %d\n",x);
 
 ```
 
 ```ruby
-[biohpc-28@clus-login OpenMP]$ 
-
+[biohpc-28@clus-login OpenMP]$ ./4.data_sharing 
+Within first parallel (shared) x is: 2
+Within first parallel (shared) x is: 3
+Within first parallel (shared) x is: 1
+Within first parallel (shared) x is: 4
+After first parallel (shared) x is: 4
 ```
 
 
