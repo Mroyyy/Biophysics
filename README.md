@@ -1,76 +1,47 @@
 # Biophysics
 
 ```ruby
-[biohpc-28@clus-login OpenMP]$ ./10.nowait 
-Loop 1: (0) gets iteration 0
-Loop 1: (0) gets iteration 1
-Loop 2: (0) gets iteration 0
-Loop 2: (0) gets iteration 1
-Loop 1: (3) gets iteration 6
-Loop 1: (3) gets iteration 7
-Loop 2: (3) gets iteration 6
-Loop 2: (3) gets iteration 7
-Loop 1: (2) gets iteration 4
-Loop 1: (2) gets iteration 5
-Loop 2: (2) gets iteration 4
-Loop 2: (2) gets iteration 5
-Loop 1: (5) gets iteration 10
-Loop 1: (5) gets iteration 11
-Loop 2: (5) gets iteration 10
-Loop 2: (5) gets iteration 11
-Loop 1: (1) gets iteration 2
-Loop 1: (1) gets iteration 3
-Loop 2: (1) gets iteration 2
-Loop 2: (1) gets iteration 3
-Loop 1: (6) gets iteration 12
-Loop 1: (6) gets iteration 13
-Loop 2: (6) gets iteration 12
-Loop 2: (6) gets iteration 13
-Loop 1: (4) gets iteration 8
-Loop 1: (4) gets iteration 9
-Loop 2: (4) gets iteration 8
-Loop 2: (4) gets iteration 9
-Loop 1: (7) gets iteration 14
-Loop 1: (7) gets iteration 15
-Loop 2: (7) gets iteration 14
-Loop 2: (7) gets iteration 15
-
+[biohpc-28@clus-login OpenMP]$ ./11.collapse 
+(0) Iter (0 0)
+(0) Iter (0 1)
+(0) Iter (0 2)
+(0) Iter (0 3)
+(0) Iter (0 4)
+(5) Iter (4 0)
+(5) Iter (4 1)
+(5) Iter (4 2)
+(5) Iter (4 3)
+(7) Iter (5 2)
+(7) Iter (5 3)
+(7) Iter (5 4)
+(7) Iter (5 5)
+(1) Iter (0 5)
+(1) Iter (1 0)
+(1) Iter (1 1)
+(1) Iter (1 2)
+(1) Iter (1 3)
+(6) Iter (4 4)
+(6) Iter (4 5)
+(2) Iter (1 4)
+(2) Iter (1 5)
+(2) Iter (2 0)
+(2) Iter (2 1)
+(2) Iter (2 2)
+(6) Iter (5 0)
+(6) Iter (5 1)
+(4) Iter (3 2)
+(4) Iter (3 3)
+(4) Iter (3 4)
+(4) Iter (3 5)
+(3) Iter (2 3)
+(3) Iter (2 4)
+(3) Iter (2 5)
+(3) Iter (3 0)
+(3) Iter (3 1)
 ```
 
 ```ruby
-[biohpc-28@clus-login OpenMP]$ ./10.nowait 
-Loop 1: (0) gets iteration 0
-Loop 1: (0) gets iteration 1
-Loop 1: (3) gets iteration 6
-Loop 1: (3) gets iteration 7
-Loop 1: (5) gets iteration 10
-Loop 1: (5) gets iteration 11
-Loop 1: (1) gets iteration 2
-Loop 1: (1) gets iteration 3
-Loop 1: (6) gets iteration 12
-Loop 1: (6) gets iteration 13
-Loop 1: (7) gets iteration 14
-Loop 1: (7) gets iteration 15
-Loop 1: (4) gets iteration 8
-Loop 1: (4) gets iteration 9
-Loop 1: (2) gets iteration 4
-Loop 1: (2) gets iteration 5
-Loop 2: (0) gets iteration 0
-Loop 2: (2) gets iteration 4
-Loop 2: (7) gets iteration 14
-Loop 2: (7) gets iteration 15
-Loop 2: (3) gets iteration 6
-Loop 2: (3) gets iteration 7
-Loop 2: (1) gets iteration 2
-Loop 2: (1) gets iteration 3
-Loop 2: (6) gets iteration 12
-Loop 2: (6) gets iteration 13
-Loop 2: (5) gets iteration 10
-Loop 2: (5) gets iteration 11
-Loop 2: (4) gets iteration 8
-Loop 2: (4) gets iteration 9
-Loop 2: (0) gets iteration 1
-Loop 2: (2) gets iteration 5
+[biohpc-28@clus-login OpenMP]$ 
 
 ```
 
