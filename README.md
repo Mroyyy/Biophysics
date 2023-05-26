@@ -3,7 +3,8 @@
 ```ruby
 cpu-bind=MASK - clus11, task  0  0 [47855]: mask 0x1 set
 cpu-bind=MASK - clus11, task  0  0 [47883]: mask 0x1 set
-/home/alumnos/biohpc/biohpc-28/OpenMP/./1.hello: /soft/gcc-10.2.0/lib64/libgomp.so.1: no version information available (required by /home/alumnos/biohpc/biohpc-28/OpenMP/./1.hello)
+/home/alumnos/biohpc/biohpc-28/OpenMP/./1.hello: /soft/gcc-10.2.0/lib64/libgomp.so.1: no version 
+information available (required by /home/alumnos/biohpc/biohpc-28/OpenMP/./1.hello)
 Hello world!
 Hello world!
 Hello world!
