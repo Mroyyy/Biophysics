@@ -19,7 +19,8 @@ Hello world!
 # Load necessary modules
 module load gcc/10.2.0
 
-#Set the working directory (in this case as we are already in the directory is not needed but if it was necessary we will write this)
+#Set the working directory (in this case as we are already in the directory is not needed 
+but if it was necessary we will write this)
 cd /home/alumnos/biohpc/biohpc-38/Lab4
 
 #Compile the C program
