@@ -1,43 +1,13 @@
 # Biophysics
 
 ```ruby
-[biohpc-28@clus-login OpenMP]$ ./11.collapse 
-(0) Iter (0 0)
-(0) Iter (0 1)
-(0) Iter (0 2)
-(0) Iter (0 3)
-(0) Iter (0 4)
-(5) Iter (4 0)
-(5) Iter (4 1)
-(5) Iter (4 2)
-(5) Iter (4 3)
-(7) Iter (5 2)
-(7) Iter (5 3)
-(7) Iter (5 4)
-(7) Iter (5 5)
-(1) Iter (0 5)
-(1) Iter (1 0)
-(1) Iter (1 1)
-(1) Iter (1 2)
-(1) Iter (1 3)
-(6) Iter (4 4)
-(6) Iter (4 5)
-(2) Iter (1 4)
-(2) Iter (1 5)
-(2) Iter (2 0)
-(2) Iter (2 1)
-(2) Iter (2 2)
-(6) Iter (5 0)
-(6) Iter (5 1)
-(4) Iter (3 2)
-(4) Iter (3 3)
-(4) Iter (3 4)
-(4) Iter (3 5)
-(3) Iter (2 3)
-(3) Iter (2 4)
-(3) Iter (2 5)
-(3) Iter (3 0)
-(3) Iter (3 1)
+[biohpc-28@clus-login OpenMP]$ ./4.data_sharing 
+Within first parallel (shared) x is: 2
+Within first parallel (shared) x is: 1
+Within first parallel (shared) x is: 1
+Within first parallel (shared) x is: 1
+After first parallel (shared) x is: 2
+
 ```
 
 ```ruby
