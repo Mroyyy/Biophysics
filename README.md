@@ -1,24 +1,31 @@
 # Biophysics
 
 ```ruby
-[biohpc-28@clus-login OpenMP]$ ./4.data_sharing 
-Within first parallel (shared) x is: 2
-Within first parallel (shared) x is: 1
-Within first parallel (shared) x is: 1
-Within first parallel (shared) x is: 1
-After first parallel (shared) x is: 2
-
+cpu-bind=MASK - clus11, task  0  0 [47855]: mask 0x1 set
+cpu-bind=MASK - clus11, task  0  0 [47883]: mask 0x1 set
+/home/alumnos/biohpc/biohpc-28/OpenMP/./1.hello: /soft/gcc-10.2.0/lib64/libgomp.so.1: no version information available (required by /home/alumnos/biohpc/biohpc-28/OpenMP/./1.hello)
+Hello world!
+Hello world!
+Hello world!
+Hello world!
 ```
 
 ```ruby
-#pragma omp parallel shared(x) 
-    {
-        #pragma omp atomic
-        x++;
-        printf("Within first parallel (shared) x is: %d\n",x);
-    }
-    printf("After first parallel (shared) x is: %d\n",x);
+#!/bin/bash
+#SBATCH -p nodo.q
+#SBATCH --time=00:10:00
 
+# Load necessary modules
+module load gcc/10.2.0
+
+#Set the working directory (in this case as we are already in the directory is not needed but if it was necessary we will write this)
+cd /home/alumnos/biohpc/biohpc-38/Lab4
+
+#Compile the C program
+gcc -Wall -O3 -fopenmp -o 1.hello 1.hello.c
+
+ #Run the program
+./1.hello
 ```
 
 ```ruby
