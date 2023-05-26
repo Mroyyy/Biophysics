@@ -2,22 +2,14 @@
 
 ```ruby
 [biohpc-28@clus-login OpenMP]$ ./10.nowait 
-Loop 1: (1) gets iteration 2
-Loop 1: (1) gets iteration 3
-Loop 2: (1) gets iteration 2
-Loop 2: (1) gets iteration 3
-Loop 1: (4) gets iteration 8
-Loop 1: (4) gets iteration 9
-Loop 2: (4) gets iteration 8
-Loop 2: (4) gets iteration 9
+Loop 1: (0) gets iteration 0
+Loop 1: (0) gets iteration 1
+Loop 2: (0) gets iteration 0
+Loop 2: (0) gets iteration 1
 Loop 1: (3) gets iteration 6
 Loop 1: (3) gets iteration 7
 Loop 2: (3) gets iteration 6
 Loop 2: (3) gets iteration 7
-Loop 1: (6) gets iteration 12
-Loop 1: (6) gets iteration 13
-Loop 2: (6) gets iteration 12
-Loop 2: (6) gets iteration 13
 Loop 1: (2) gets iteration 4
 Loop 1: (2) gets iteration 5
 Loop 2: (2) gets iteration 4
@@ -26,14 +18,23 @@ Loop 1: (5) gets iteration 10
 Loop 1: (5) gets iteration 11
 Loop 2: (5) gets iteration 10
 Loop 2: (5) gets iteration 11
-Loop 1: (0) gets iteration 0
-Loop 1: (0) gets iteration 1
-Loop 2: (0) gets iteration 0
-Loop 2: (0) gets iteration 1
+Loop 1: (1) gets iteration 2
+Loop 1: (1) gets iteration 3
+Loop 2: (1) gets iteration 2
+Loop 2: (1) gets iteration 3
+Loop 1: (6) gets iteration 12
+Loop 1: (6) gets iteration 13
+Loop 2: (6) gets iteration 12
+Loop 2: (6) gets iteration 13
+Loop 1: (4) gets iteration 8
+Loop 1: (4) gets iteration 9
+Loop 2: (4) gets iteration 8
+Loop 2: (4) gets iteration 9
 Loop 1: (7) gets iteration 14
 Loop 1: (7) gets iteration 15
 Loop 2: (7) gets iteration 14
 Loop 2: (7) gets iteration 15
+
 ```
 
 ```ruby
