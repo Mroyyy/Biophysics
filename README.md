@@ -1,36 +1,5 @@
 # Biophysics
 
-```ruby
-#include <stdio.h>
-#include <stdlib.h>
-#include <sys/time.h>
-#include <omp.h>        /* OpenMP */
-#define N 6
-
-int main()
-{
-    int i,j;
-
-    omp_set_num_threads(8);
-    #pragma omp parallel
-    {
-        #pragma omp for
-        for (i=0; i < N; i++) {
-            #pragma omp parallel for
-            for (j=0; j < N; j++) {
-                int id=omp_get_thread_num();
-                printf("(%d) Iter (%d %d)\n",id,i,j);
-            }
-        }
-    }
-
-    return 0;
-}
-
-```
-
-
-
 Here is the source code for an exercise about the **evaluation energy Spike RBD-ACE2 protein-protein interface analysis** using Jupyter-notebook. The objective of this project was to evaluate the contribution of each of the interface residues to the interaction energy in a specific protein-protein complex. 
 
 ## Index
