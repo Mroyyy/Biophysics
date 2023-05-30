@@ -73,7 +73,7 @@ int main()
                   	}
                   	#pragma omp ordered
             	printf("Inside ordered - (%d) gets iteration %d\n",id,i);
-            	printf("Inside ordered - (%d) gets iteration %d\n",id,i);
+            	printf("Inside ordered - (%d) gets iteration %d\n",id,i + 1);
                	}
 	}
 
