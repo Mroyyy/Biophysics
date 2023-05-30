@@ -1,85 +1,56 @@
 # Biophysics
 ```ruby
-[biohpc-28@clus-login OpenMP]$ ./12.ordered 
-Before ordered - (2) gets iteration 8
-Before ordered - (3) gets iteration 12
-Before ordered - (1) gets iteration 4
-Before ordered - (0) gets iteration 0
-Inside ordered - (0) gets iteration 0
-Inside ordered - (0) gets iteration 1
-Before ordered - (0) gets iteration 1
-Inside ordered - (0) gets iteration 1
-Inside ordered - (0) gets iteration 2
-Before ordered - (0) gets iteration 2
-Inside ordered - (0) gets iteration 2
-Inside ordered - (0) gets iteration 3
-Before ordered - (0) gets iteration 3
-Inside ordered - (0) gets iteration 3
-Inside ordered - (0) gets iteration 4
-Inside ordered - (1) gets iteration 4
-Inside ordered - (1) gets iteration 5
-Before ordered - (1) gets iteration 5
-Inside ordered - (1) gets iteration 5
-Inside ordered - (1) gets iteration 6
-Before ordered - (1) gets iteration 6
-Inside ordered - (1) gets iteration 6
-Inside ordered - (1) gets iteration 7
-Before ordered - (1) gets iteration 7
-Inside ordered - (1) gets iteration 7
-Inside ordered - (1) gets iteration 8
-Inside ordered - (2) gets iteration 8
-Inside ordered - (2) gets iteration 9
-Before ordered - (2) gets iteration 9
-Inside ordered - (2) gets iteration 9
-Inside ordered - (2) gets iteration 10
-Before ordered - (2) gets iteration 10
-Inside ordered - (2) gets iteration 10
-Inside ordered - (2) gets iteration 11
-Before ordered - (2) gets iteration 11
-Inside ordered - (2) gets iteration 11
-Inside ordered - (2) gets iteration 12
-Inside ordered - (3) gets iteration 12
-Inside ordered - (3) gets iteration 13
-Before ordered - (3) gets iteration 13
-Inside ordered - (3) gets iteration 13
-Inside ordered - (3) gets iteration 14
-Before ordered - (3) gets iteration 14
-Inside ordered - (3) gets iteration 14
-Inside ordered - (3) gets iteration 15
-Before ordered - (3) gets iteration 15
-Inside ordered - (3) gets iteration 15
-Inside ordered - (3) gets iteration 16
+[biohpc-28@clus-login OpenMP]$ ./13.doacross 
+Outside from 2 executing 2
+Inside from 2 executing 2
+Outside from 2 executing 8
+Outside from 6 executing 4
+Inside from 6 executing 4
+Outside from 6 executing 10
+Outside from 5 executing 5
+Outside from 4 executing 6
+Inside from 4 executing 6
+Outside from 4 executing 11
+Inside from 2 executing 8
+Outside from 2 executing 12
+Outside from 1 executing 1
+Inside from 1 executing 1
+Outside from 1 executing 13
+Outside from 3 executing 7
+Inside from 6 executing 10
+Outside from 6 executing 14
+Outside from 0 executing 3
+Inside from 0 executing 3
+Outside from 0 executing 15
+Inside from 2 executing 12
+Inside from 5 executing 5
+Inside from 3 executing 7
+Outside from 7 executing 9
+Inside from 7 executing 9
+Inside from 6 executing 14
+Inside from 4 executing 11
+Inside from 1 executing 13
+Inside from 0 executing 15
+(2) Computing iteration 1 1
+(2) Computing iteration 1 2
+(3) Computing iteration 2 1
+(2) Computing iteration 1 3
+(3) Computing iteration 2 2
+(1) Computing iteration 3 1
+(2) Computing iteration 1 4
+(3) Computing iteration 2 3
+(7) Computing iteration 4 1
+(1) Computing iteration 3 2
+(3) Computing iteration 2 4
+(7) Computing iteration 4 2
+(1) Computing iteration 3 3
+(7) Computing iteration 4 3
+(1) Computing iteration 3 4
+(7) Computing iteration 4 4
+
+
 ```
-```ruby
-#include <stdio.h>
-#include <stdlib.h>
-#include <sys/time.h>
-#include <unistd.h>
 
-#include <omp.h>    	/* OpenMP */
-#define N 16
-int main()
-{
-	int i;
-
-	omp_set_num_threads(4);
-	#pragma omp parallel
-	{
-    	#pragma omp for schedule(static, 2) ordered
-    	for (i=0; i < N; i+=2) {
-      	int id=omp_get_thread_num();
-            	{
-        	printf("Before ordered - (%d) gets iteration %d\n",id,i);
-                  	}
-                  	#pragma omp ordered
-            	printf("Inside ordered - (%d) gets iteration %d\n",id,i);
-            	printf("Inside ordered - (%d) gets iteration %d\n",id,i + 1);
-               	}
-	}
-
-	return 0;
-}
-```
 
 
 Here is the source code for an exercise about the **evaluation energy Spike RBD-ACE2 protein-protein interface analysis** using Jupyter-notebook. The objective of this project was to evaluate the contribution of each of the interface residues to the interaction energy in a specific protein-protein complex. 
