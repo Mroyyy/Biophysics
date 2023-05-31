@@ -1,20 +1,5 @@
 # Biophysics
 
-
-```ruby
-[biohpc-28@clus-login OpenMP]$ lscpu
-Architecture:          x86_64
-CPU op-mode(s):        32-bit, 64-bit
-Byte Order:            Little Endian
-CPU(s):                4
-On-line CPU(s) list:   0-3
-Thread(s) per core:    1
-Core(s) per socket:    2
-Socket(s):             2
-```
-
-
-
 Here is the source code for an exercise about the **evaluation energy Spike RBD-ACE2 protein-protein interface analysis** using Jupyter-notebook. The objective of this project was to evaluate the contribution of each of the interface residues to the interaction energy in a specific protein-protein complex. 
 
 ## Index
