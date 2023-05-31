@@ -1,72 +1,39 @@
 # Biophysics
 
-```ruby
-#!/bin/bash
-#SBATCH -p nodo.q
-#SBATCH --exclusive
-#SBATCH --nodes=1
-#SBATCH --ntasks-per-node=1
-#SBATCH --cpus-per-task=1
-#SBATCH --job-name=parallel_pip
-#SBATCH --time=00:10:00
-
-# Load necessary modules
-module load gcc/10.2.0
-
-
-# Set the number of steps and number of threads
-NUM_STEPS=100000
-THREADS=(1 2 4 8 16)  # Array to include the desired number of threads
-
-# Compile the program
-gcc -fopenmp -o parallel_pi parallel_pi.c
-
-# Execute the program with different numbers of threads
-for thread_count in "${THREADS[@]}"
-do
-    echo "Running with $thread_count thread(s)"
-    export OMP_NUM_THREADS=$thread_count
-    srun -n 1 ./parallel_pi $NUM_STEPS $thread_count
-    echo ""
-done
-```
 
 ```ruby
-cpu-bind=MASK - clus11, task  0  0 [51535]: mask 0xfff set
-Running with 1 thread(s)
-cpu-bind=NONE - clus11, task  0  0 [51568]: mask 0x0
-# Pi:            3.14159265359816
 # Threads:       1 
-# Iterations:    100000 
-# Time(s):       0.001208 
+# Iterations:    10000000 
+# Time(s):       0.110940 
 
 Running with 2 thread(s)
-cpu-bind=NONE - clus11, task  0  0 [51585]: mask 0x0
-# Pi:            3.15430288939972
+cpu-bind=NONE - clus11, task  0  0 [52321]: mask 0x0
+# Pi:            3.15338253009971
 # Threads:       2 
-# Iterations:    100000 
-# Time(s):       0.002143 
+# Iterations:    10000000 
+# Time(s):       0.206549 
 
 Running with 4 thread(s)
-cpu-bind=NONE - clus11, task  0  0 [51603]: mask 0x0
-# Pi:            3.14545173076979
+cpu-bind=NONE - clus11, task  0  0 [52339]: mask 0x0
+# Pi:            3.14188882640013
 # Threads:       4 
-# Iterations:    100000 
-# Time(s):       0.003488 
+# Iterations:    10000000 
+# Time(s):       0.342041 
 
 Running with 8 thread(s)
-cpu-bind=NONE - clus11, task  0  0 [51623]: mask 0x0
-# Pi:            3.14563870634789
+cpu-bind=NONE - clus11, task  0  0 [52359]: mask 0x0
+# Pi:            3.14319695426110
 # Threads:       8 
-# Iterations:    100000 
-# Time(s):       0.004844 
+# Iterations:    10000000 
+# Time(s):       0.467749 
 
 Running with 16 thread(s)
-cpu-bind=NONE - clus11, task  0  0 [51647]: mask 0x0
-# Pi:            3.13710301952381
+cpu-bind=NONE - clus11, task  0  0 [52383]: mask 0x0
+# Pi:            3.14941145704931
 # Threads:       16 
-# Iterations:    100000 
-# Time(s):       0.004202 
+# Iterations:    10000000 
+# Time(s):       0.409137 
+
 ```
 
 
