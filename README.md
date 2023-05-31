@@ -2,6 +2,10 @@
 
 
 ```ruby
+cpu-bind=MASK - clus11, task  0  0 [52271]: mask 0xfff set
+Running with 1 thread(s)
+cpu-bind=NONE - clus11, task  0  0 [52304]: mask 0x0
+# Pi:            3.14159265358973
 # Threads:       1 
 # Iterations:    10000000 
 # Time(s):       0.110940 
