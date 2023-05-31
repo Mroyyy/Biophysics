@@ -1,48 +1,26 @@
 # Biophysics
 
 ```ruby
-CC   	= gcc
-OPENMP   = -fopenmp
-CFLAGS   = -Wall -O3 $(OPENMP)
-TARGET   = 1.hello 2.hello 3.how_many 4.data_sharing 5.parallel 6.datarace 7.barrier 8.for 9.schedule 10.nowait 11.collapse 12.ordered 13.doacross parallel_pi
-programs: $(TARGET)
+int main (int argc, char* argv[])
+{
+        unsigned long long int i;
+        double x, pi, step, sum = 0.0;
+        char *endptr;
+        double start,stop;
 
-1.hello: 1.hello.c
-    	$(CC) $(CFLAGS) -o $@ $<
-2.hello: 2.hello.c
-    	$(CC) $(CFLAGS) -o $@ $<
-3.how_many: 3.how_many.c
-    	$(CC) $(CFLAGS) -o $@ $<
-4.data_sharing: 4.data_sharing.c
-    	$(CC) $(CFLAGS) -o $@ $<
-5.parallel: 5.parallel.c
-    	$(CC) $(CFLAGS) -o $@ $<
-6.datarace: 6.datarace.c
-    	$(CC) $(CFLAGS) -o $@ $<
-7.barrier: 7.barrier.c
-    	$(CC) $(CFLAGS) -o $@ $<
-8.for: 8.for.c
-    	$(CC) $(CFLAGS) -o $@  $<
-9.schedule: 9.schedule.c
-    	$(CC) $(CFLAGS) -o $@  $<
-10.nowait: 10.nowait.c
-    	$(CC) $(CFLAGS) -o $@  $<
-11.collapse: 11.collapse.c
-    	$(CC) $(CFLAGS) -o $@  $<
-12.ordered: 12.ordered.c
-    	$(CC) $(CFLAGS) -o $@  $<
-13.doacross: 13.doacross.c
-    	$(CC) $(CFLAGS) -o $@  $<
-parallel_pi: parallel_pi.c
-    	$(CC) $(CFLAGS) -o $@  $<
-.c:
-    	$(CC) $(CFLAGS) -o $@  $<
+    if (argc == 3 ){
+        num_steps = strtol(argv[1],&endptr,10);
+        num_threads = atoi(argv[2]);
+    }
 
-clean:
-    	rm -f $(TARGET)
+    start = get_second();
 
-
-
+        step = 1.0/(double) num_steps;
+        #pragma omp parallel for num_threads(num_threads) reduction(+:sum)
+        for (i=0; i < num_steps; i++){
+                   x=(i+0.5)*step;
+                   sum = sum + 4.0/(1.0+x*x);
+     }
 ```
 
 
