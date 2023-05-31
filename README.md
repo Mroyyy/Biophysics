@@ -1,5 +1,25 @@
 # Biophysics
 
+```ruby
+(6) Computing iteration 1 1
+(6) Computing iteration 1 2
+(6) Computing iteration 1 3
+(6) Computing iteration 1 4
+(0) Computing iteration 2 1
+(0) Computing iteration 2 2
+(0) Computing iteration 2 3
+(0) Computing iteration 2 4
+(1) Computing iteration 3 1
+(1) Computing iteration 3 2
+(1) Computing iteration 3 3
+(1) Computing iteration 3 4
+(3) Computing iteration 4 1
+(3) Computing iteration 4 2
+(3) Computing iteration 4 3
+(3) Computing iteration 4 4
+```
+
+
 Here is the source code for an exercise about the **evaluation energy Spike RBD-ACE2 protein-protein interface analysis** using Jupyter-notebook. The objective of this project was to evaluate the contribution of each of the interface residues to the interaction energy in a specific protein-protein complex. 
 
 ## Index
