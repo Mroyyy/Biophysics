@@ -1,22 +1,74 @@
 # Biophysics
 
 ```ruby
-12.ordered: 12.ordered.c
-        $(CC) $(CFLAGS) -o $@  $<
+#!/bin/bash
+#SBATCH -p nodo.q
+#SBATCH --exclusive
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=1
+#SBATCH --job-name=parallel_pip
+#SBATCH --time=00:10:00
 
-13.doacross: 13.doacross.c
-        $(CC) $(CFLAGS) -o $@  $<
+# Load necessary modules
+module load gcc/10.2.0
 
-parallel_pi: parallel_pi.c
-        $(CC) $(CFLAGS) -o $@  $<
 
-.c:
-        $(CC) $(CFLAGS) -o $@  $<
+# Set the number of steps and number of threads
+NUM_STEPS=100000
+THREADS=(1 2 4 8 16)  # Array to include the desired number of threads
 
-clean: 
-        rm -f $(TARGET)
+# Compile the program
+gcc -fopenmp -o parallel_pi parallel_pi.c
 
+# Execute the program with different numbers of threads
+for thread_count in "${THREADS[@]}"
+do
+    echo "Running with $thread_count thread(s)"
+    export OMP_NUM_THREADS=$thread_count
+    srun -n 1 ./parallel_pi $NUM_STEPS $thread_count
+    echo ""
+done
 ```
+
+```ruby
+cpu-bind=MASK - clus11, task  0  0 [51535]: mask 0xfff set
+Running with 1 thread(s)
+cpu-bind=NONE - clus11, task  0  0 [51568]: mask 0x0
+# Pi:            3.14159265359816
+# Threads:       1 
+# Iterations:    100000 
+# Time(s):       0.001208 
+
+Running with 2 thread(s)
+cpu-bind=NONE - clus11, task  0  0 [51585]: mask 0x0
+# Pi:            3.15430288939972
+# Threads:       2 
+# Iterations:    100000 
+# Time(s):       0.002143 
+
+Running with 4 thread(s)
+cpu-bind=NONE - clus11, task  0  0 [51603]: mask 0x0
+# Pi:            3.14545173076979
+# Threads:       4 
+# Iterations:    100000 
+# Time(s):       0.003488 
+
+Running with 8 thread(s)
+cpu-bind=NONE - clus11, task  0  0 [51623]: mask 0x0
+# Pi:            3.14563870634789
+# Threads:       8 
+# Iterations:    100000 
+# Time(s):       0.004844 
+
+Running with 16 thread(s)
+cpu-bind=NONE - clus11, task  0  0 [51647]: mask 0x0
+# Pi:            3.13710301952381
+# Threads:       16 
+# Iterations:    100000 
+# Time(s):       0.004202 
+```
+
 
 
 Here is the source code for an exercise about the **evaluation energy Spike RBD-ACE2 protein-protein interface analysis** using Jupyter-notebook. The objective of this project was to evaluate the contribution of each of the interface residues to the interaction energy in a specific protein-protein complex. 
