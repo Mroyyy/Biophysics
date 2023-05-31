@@ -2,42 +2,15 @@
 
 
 ```ruby
-cpu-bind=MASK - clus11, task  0  0 [52271]: mask 0xfff set
-Running with 1 thread(s)
-cpu-bind=NONE - clus11, task  0  0 [52304]: mask 0x0
-# Pi:            3.14159265358973
-# Threads:       1 
-# Iterations:    10000000 
-# Time(s):       0.110940 
-
-Running with 2 thread(s)
-cpu-bind=NONE - clus11, task  0  0 [52321]: mask 0x0
-# Pi:            3.15338253009971
-# Threads:       2 
-# Iterations:    10000000 
-# Time(s):       0.206549 
-
-Running with 4 thread(s)
-cpu-bind=NONE - clus11, task  0  0 [52339]: mask 0x0
-# Pi:            3.14188882640013
-# Threads:       4 
-# Iterations:    10000000 
-# Time(s):       0.342041 
-
-Running with 8 thread(s)
-cpu-bind=NONE - clus11, task  0  0 [52359]: mask 0x0
-# Pi:            3.14319695426110
-# Threads:       8 
-# Iterations:    10000000 
-# Time(s):       0.467749 
-
-Running with 16 thread(s)
-cpu-bind=NONE - clus11, task  0  0 [52383]: mask 0x0
-# Pi:            3.14941145704931
-# Threads:       16 
-# Iterations:    10000000 
-# Time(s):       0.409137 
-
+[biohpc-28@clus-login OpenMP]$ lscpu
+Architecture:          x86_64
+CPU op-mode(s):        32-bit, 64-bit
+Byte Order:            Little Endian
+CPU(s):                4
+On-line CPU(s) list:   0-3
+Thread(s) per core:    1
+Core(s) per socket:    2
+Socket(s):             2
 ```
 
 
