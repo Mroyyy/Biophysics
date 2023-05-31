@@ -1,26 +1,21 @@
 # Biophysics
 
 ```ruby
-int main (int argc, char* argv[])
-{
-        unsigned long long int i;
-        double x, pi, step, sum = 0.0;
-        char *endptr;
-        double start,stop;
+12.ordered: 12.ordered.c
+        $(CC) $(CFLAGS) -o $@  $<
 
-    if (argc == 3 ){
-        num_steps = strtol(argv[1],&endptr,10);
-        num_threads = atoi(argv[2]);
-    }
+13.doacross: 13.doacross.c
+        $(CC) $(CFLAGS) -o $@  $<
 
-    start = get_second();
+parallel_pi: parallel_pi.c
+        $(CC) $(CFLAGS) -o $@  $<
 
-        step = 1.0/(double) num_steps;
-        #pragma omp parallel for num_threads(num_threads) reduction(+:sum)
-        for (i=0; i < num_steps; i++){
-                   x=(i+0.5)*step;
-                   sum = sum + 4.0/(1.0+x*x);
-     }
+.c:
+        $(CC) $(CFLAGS) -o $@  $<
+
+clean: 
+        rm -f $(TARGET)
+
 ```
 
 
