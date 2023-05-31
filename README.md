@@ -1,22 +1,44 @@
 # Biophysics
 
 ```ruby
-(6) Computing iteration 1 1
-(6) Computing iteration 1 2
-(6) Computing iteration 1 3
-(6) Computing iteration 1 4
-(0) Computing iteration 2 1
-(0) Computing iteration 2 2
-(0) Computing iteration 2 3
-(0) Computing iteration 2 4
-(1) Computing iteration 3 1
-(1) Computing iteration 3 2
-(1) Computing iteration 3 3
-(1) Computing iteration 3 4
-(3) Computing iteration 4 1
-(3) Computing iteration 4 2
-(3) Computing iteration 4 3
-(3) Computing iteration 4 4
+CC   	= gcc
+OPENMP   = -fopenmp
+CFLAGS   = -Wall -O3 $(OPENMP)
+
+TARGET   = 1.hello 2.hello 3.how_many 4.data_sharing 5.parallel 6.datarace 7.barrier 8.for 9.schedule 10.nowait 11.collapse 12.ordered 13.doacross parallel_pi
+
+programs: $(TARGET)
+
+1.hello: 1.hello.c
+    	$(CC) $(CFLAGS) -o $@ $<
+
+2.hello: 2.hello.c
+    	$(CC) $(CFLAGS) -o $@ $<
+
+3.how_many: 3.how_many.c
+    	$(CC) $(CFLAGS) -o $@ $<
+
+4.data_sharing: 4.data_sharing.c
+    	$(CC) $(CFLAGS) -o $@ $<
+
+5.parallel: 5.parallel.c
+    	$(CC) $(CFLAGS) -o $@ $<
+
+6.datarace: 6.datarace.c
+    	$(CC) $(CFLAGS) -o $@ $<
+
+7.barrier: 7.barrier.c
+    	$(CC) $(CFLAGS) -o $@ $<
+
+8.for: 8.for.c
+    	$(CC) $(CFLAGS) -o $@  $<
+
+9.schedule: 9.schedule.c
+    	$(CC) $(CFLAGS) -o $@  $<
+
+10.nowait: 10.nowait.c
+    	$(CC) $(CFLAGS) -o $@  $<
+
 ```
 
 
