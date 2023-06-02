@@ -1,5 +1,21 @@
 # Biophysics
 
+```ruby
+[biohpc-28@clus-login OpenMP_2]$ ./prefix_add 
+ 
+ ***********  Result SEQUENTIAL ************
+-6 -2 -87 -160 -90 -81 -32 21 116 83 142 128 52 15 93 46 -5 -93 -153 -65 -4 -103 -191 -234 -160 -84
+(...)
+EVEN  -107317568      ODD  -107324151 
+Number of threads: 4
+
+ *********  Result PARALLEL with 4 threads **********
+-6 -2 -87 -160 -90 -81 -32 21 116 83 142 128 52 15 93 46 -5 -93 -153 -65 -4 -103 -191 -234 -160 -84
+(...)
+EVEN_par  -107317568      ODD_par  -107324151 
+
+```
+
 Here is the source code for an exercise about the **evaluation energy Spike RBD-ACE2 protein-protein interface analysis** using Jupyter-notebook. The objective of this project was to evaluate the contribution of each of the interface residues to the interaction energy in a specific protein-protein complex. 
 
 ## Index
