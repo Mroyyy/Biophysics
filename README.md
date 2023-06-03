@@ -1,5 +1,29 @@
 # Biophysics
 
+
+```ruby
+int num_threads;
+#pragma omp parallel shared(sum, prefix_par, even_par, odd_par) private(i, num_threads)
+{
+        int id = omp_get_thread_num();
+        if (id == 0){
+                num_threads = omp_get_num_threads();
+                printf("Number of threads: %d\n", num_threads);
+        }
+        #pragma omp for
+        for (i = 0; i < N; i++){
+                prefix_par[i] = prefix_sum[i];
+        }
+
+        #pragma omp for reduction(+:even_par, odd_par)
+        for(i= 0 ; i < N; i += 2) {
+                even_par += prefix_par[i];
+                odd_par += prefix_par[i+1];
+        }
+}
+
+```
+
 Here is the source code for an exercise about the **evaluation energy Spike RBD-ACE2 protein-protein interface analysis** using Jupyter-notebook. The objective of this project was to evaluate the contribution of each of the interface residues to the interaction energy in a specific protein-protein complex. 
 
 ## Index
