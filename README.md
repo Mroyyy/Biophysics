@@ -1,5 +1,36 @@
 # Biophysics
 
+```ruby
+cpu-bind=MASK - clus11, task  0  0 [62198]: mask 0x1 set
+hellohybrid.c
+hellohybrid.slurm
+helloworld.py
+names_0.txt
+names_1.txt
+names_2.txt
+names_3.txt
+names_4.txt
+slurm-177873.out
+slurm1.sh
+text.txt
+Hello, world!
+```
+
+```ruby
+#!/bin/bash
+#SBATCH --nodes=1
+
+# Creates a file called 'text.txt' with the content specified
+echo "I have written a submit script" > text.txt
+# lists the contents of the foldes
+ls
+# sleeps for 25 seconds
+sleep 25
+# runs a python program
+python3 helloworld.py
+```
+
+
 Here is the source code for an exercise about the **evaluation energy Spike RBD-ACE2 protein-protein interface analysis** using Jupyter-notebook. The objective of this project was to evaluate the contribution of each of the interface residues to the interaction energy in a specific protein-protein complex. 
 
 ## Index
