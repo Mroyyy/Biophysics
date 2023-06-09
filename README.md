@@ -1,7 +1,7 @@
 # Biophysics
 
 ```ruby
-cpu-bind=MASK - clus11, task  0  0 [28965]: mask 0x1 set
+cpu-bind=MASK - clus11, task  0  0 [29240]: mask 0x1 set
 hellohybrid.c
 hellohybrid.slurm
 helloworld.py
@@ -12,8 +12,11 @@ names_3.txt
 names_4.txt
 slurm-177873.out
 slurm-178183.out
+slurm-178188.out
 slurm1.sh
 slurm2.sh
+slurm3.sh
+slurm3.sh_178188.out
 test.txt
 text.txt
 Hello, world!
@@ -23,20 +26,18 @@ Hello, world!
 #!/bin/bash
 #SBATCH --nodes=1
 
-
 # Creates a file called 'text.txt' with the content specified
-echo "I have written a submit script" > $1
+echo "I have written a submit script" > "${SLURM_JOB_NAME}_${SLURM_JOB_ID}.out"
 # lists the contents of the foldes
 ls
 # sleeps for 25 seconds
-sleep $2
+sleep 25
 # runs a python program
 python3 helloworld.py
 ```
 
 ```ruby
-[biohpc-28@clus-login SLURM]$ sbatch slurm2.sh test.txt 30
-Submitted batch job 178183
+I have written a submit script
 ```
 
 
