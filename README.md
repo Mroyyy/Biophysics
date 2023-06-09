@@ -4,8 +4,6 @@
 #!/bin/bash
 #SBATCH --job-name=sorting_job
 #SBATCH --output=sorting_job_%j.out
-#SBATCH --nodes=1
-#SBATCH --ntasks-per-node=1
 
 in_files=(names_*.txt)
 
@@ -14,24 +12,10 @@ for file in "${in_files[@]}"; do
     	sort "$file" > "$sort_file"
     	echo "Sorted $file and saved as $sort_file"
 done
+
 ```
 
-```ruby
-cpu-bind=MASK - clus11, task  0  0 [21753]: mask 0x1 set
-Sorted names_0.txt and saved as names_0.txt.sorted
-Sorted names_1.txt and saved as names_1.txt.sorted
-Sorted names_2.txt and saved as names_2.txt.sorted
-Sorted names_3.txt and saved as names_3.txt.sorted
-Sorted names_4.txt and saved as names_4.txt.sorted
-```
 
-```ruby
-[biohpc-38@clus-login SLURM]$ ls
-hellohybrid.c   	names_1.txt     	names_3.txt     	sorting_job_178072.out
-hellohybrid.slurm   names_1.txt.sorted  names_3.txt.sorted  sort_job.sh
-names_0.txt     	names_2.txt     	names_4.txt
-names_0.txt.sorted  names_2.txt.sorted  names_4.txt.sorted
-```
 
 
 
