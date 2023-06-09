@@ -1,19 +1,44 @@
 # Biophysics
 
 ```ruby
-#!/bin/bash
-#SBATCH --job-name=sorting_job
-#SBATCH --output=sorting_job_%j.out
-
-in_files=(names_*.txt)
-
-for file in "${in_files[@]}"; do
-    	sort_file="${file}.sorted"
-    	sort "$file" > "$sort_file"
-    	echo "Sorted $file and saved as $sort_file"
-done
-
+cpu-bind=MASK - clus11, task  0  0 [28965]: mask 0x1 set
+hellohybrid.c
+hellohybrid.slurm
+helloworld.py
+names_0.txt
+names_1.txt
+names_2.txt
+names_3.txt
+names_4.txt
+slurm-177873.out
+slurm-178183.out
+slurm1.sh
+slurm2.sh
+test.txt
+text.txt
+Hello, world!
 ```
+
+```ruby
+#!/bin/bash
+#SBATCH --nodes=1
+
+
+# Creates a file called 'text.txt' with the content specified
+echo "I have written a submit script" > $1
+# lists the contents of the foldes
+ls
+# sleeps for 25 seconds
+sleep $2
+# runs a python program
+python3 helloworld.py
+```
+
+```ruby
+[biohpc-28@clus-login SLURM]$ sbatch slurm2.sh test.txt 30
+Submitted batch job 178183
+```
+
 
 
 
