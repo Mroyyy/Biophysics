@@ -3,8 +3,8 @@
 ```ruby
 #!/bin/bash
 #SBATCH --partition=nodo.q
-#SBATCH --nodes=1
-#SBATCH --ntasks-per-node=6
+#SBATCH --nodes=2
+#SBATCH --ntasks-per-node=12
 
 echo "Initial message"
 
@@ -14,15 +14,16 @@ sleep 5
 
 echo "Clossing message"
 
+
 ```
 
 ```ruby
-[biohpc-28@clus-login SLURM]$ chmod +x test.sh 
 [biohpc-28@clus-login SLURM]$ srun ./test.sh
-cpu-bind=MASK - clus11, task  0  0 [27588]: mask 0x1 set
+cpu-bind=MASK - clus11, task  0  0 [27749]: mask 0x1 set
 Initial message
 Running on host: clus11.hpc.local
 Clossing message
+
 
 
 ```
