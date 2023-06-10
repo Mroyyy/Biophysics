@@ -1,42 +1,29 @@
 # Biophysics
 
 ```ruby
-cpu-bind=MASK - clus11, task  0  0 [29398]: mask 0x1 set
-hellohybrid.c
-hellohybrid.slurm
-helloworld.py
-names_0.txt
-names_1.txt
-names_2.txt
-names_3.txt
-names_4.txt
-slurm-177873.out
-slurm-178183.out
-slurm-178188.out
-slurm1.sh
-slurm2.sh
-slurm3.sh
-slurm3.sh_178188.out
-slurm4.sh
-slurm4.sh-178189.output
-test.txt
-text.txt
-Hello, world!
+#!/bin/bash
+#SBATCH --partition=nodo.q
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=6
+
+echo "Initial message"
+
+echo "Running on host: $(hostname)"
+
+sleep 5
+
+echo "Clossing message"
+
 ```
 
 ```ruby
-#!/bin/bash
-#SBATCH --nodes=1
-#SBATCH --output=%x-%j.output 
+[biohpc-28@clus-login SLURM]$ chmod +x test.sh 
+[biohpc-28@clus-login SLURM]$ srun ./test.sh
+cpu-bind=MASK - clus11, task  0  0 [27588]: mask 0x1 set
+Initial message
+Running on host: clus11.hpc.local
+Clossing message
 
-# Creates a file called 'text.txt' with the content specified
-echo "I have written a submit script" > text.txt
-# lists the contents of the foldes
-ls
-# sleeps for 25 seconds
-sleep 25
-# runs a python program
-python3 helloworld.py
 
 ```
 
