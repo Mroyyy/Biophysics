@@ -1,40 +1,5 @@
 # Biophysics
 
-```ruby
-#!/bin/bash
-#SBATCH --partition=nodo.q
-#SBATCH --nodes=2
-#SBATCH --ntasks-per-node=12
-
-echo "Initial message"
-
-echo "Running on host: $(hostname)"
-
-sleep 5
-
-echo "Clossing message"
-
-
-```
-
-```ruby
-[biohpc-28@clus-login SLURM]$ srun ./test.sh
-cpu-bind=MASK - clus11, task  0  0 [27749]: mask 0x1 set
-Initial message
-Running on host: clus11.hpc.local
-Clossing message
-
-
-
-```
-
-
-
-
-
-
-
-
 Here is the source code for an exercise about the **evaluation energy Spike RBD-ACE2 protein-protein interface analysis** using Jupyter-notebook. The objective of this project was to evaluate the contribution of each of the interface residues to the interaction energy in a specific protein-protein complex. 
 
 ## Index
