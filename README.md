@@ -1,22 +1,16 @@
 # Biophysics
 
 ```ruby
-void loop_2() {
-    int N = 1000;
-    float a = 3.0f;
-    float* restrict x = (float*)malloc(N * sizeof(float));
-    float* restrict y = (float*)malloc(N * sizeof(float));
+loop_2:
+     33, Intensity = 0.0
+     36, Intensity = 0.0
+         Generating implicit copyin(x[:1000]) [if not already present]
+         Generating implicit copy(y[:1000]) [if not already present]
+     38, Intensity = 0.67    
+         Loop is parallelizable
+         Generating Tesla code
+         38, #pragma acc loop gang, vector(128) /* blockIdx.x threadIdx.x */
 
-    for (int i = 0; i < N; ++i) {
-        x[i] = 2.0f;
-        y[i] = 1.0f;
-    }
-
-    #pragma acc kernels
-    for (int i = 0; i < N; ++i) {
-        y[i] = a * x[i] + y[i];
-    }
-}
 
 
 ```
