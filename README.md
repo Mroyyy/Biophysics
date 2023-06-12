@@ -1,17 +1,17 @@
 # Biophysics
 
 ```ruby
-aolin23.uab.es
+aoclsd.uab.cat
 *****************************************
 
-CUDA Driver Version:           11020
-NVRM version:                  NVIDIA UNIX x86_64 Kernel Module  460.32.03  Sun Dec 27 19:00:34 UTC 2020
+CUDA Driver Version:           11030
+NVRM version:                  NVIDIA UNIX x86_64 Kernel Module  465.19.01  Fri Mar 19 07:44:41 UTC 2021
 
 Device Number:                 0
-Device Name:                   GeForce RTX 3080
-Device Revision Number:        8.6
-Global Memory Size:            10504306688
-Number of Multiprocessors:     68
+Device Name:                   NVIDIA GeForce RTX 2070
+Device Revision Number:        7.5
+Global Memory Size:            8370061312
+Number of Multiprocessors:     36
 Concurrent Copy and Execution: Yes
 Total Constant Memory:         65536
 Total Shared Memory per Block: 49152
@@ -22,25 +22,57 @@ Maximum Block Dimensions:      1024, 1024, 64
 Maximum Grid Dimensions:       2147483647 x 65535 x 65535
 Maximum Memory Pitch:          2147483647B
 Texture Alignment:             512B
-Clock Rate:                    1710 MHz
+Clock Rate:                    1620 MHz
 Execution Timeout:             No
 Integrated Device:             No
 Can Map Host Memory:           Yes
 Compute Mode:                  default
 Concurrent Kernels:            Yes
 ECC Enabled:                   No
-Memory Clock Rate:             9501 MHz
-Memory Bus Width:              320 bits
-L2 Cache Size:                 5242880 bytes
-Max Threads Per SMP:           1536
-Async Engines:                 2
+Memory Clock Rate:             7001 MHz
+Memory Bus Width:              256 bits
+L2 Cache Size:                 4194304 bytes
+Max Threads Per SMP:           1024
+Async Engines:                 3
 Unified Addressing:            Yes
 Managed Memory:                Yes
 Concurrent Managed Memory:     Yes
 Preemption Supported:          Yes
 Cooperative Launch:            Yes
   Multi-Device:                Yes
-Default Target:                cc80
+Default Target:                cc75
+
+Device Number:                 1
+Device Name:                   NVIDIA GeForce GTX 750 Ti
+Device Revision Number:        5.0
+Global Memory Size:            2099052544
+Number of Multiprocessors:     5
+Concurrent Copy and Execution: Yes
+Total Constant Memory:         65536
+Total Shared Memory per Block: 49152
+Registers per Block:           65536
+Warp Size:                     32
+Maximum Threads per Block:     1024
+Maximum Block Dimensions:      1024, 1024, 64
+Maximum Grid Dimensions:       2147483647 x 65535 x 65535
+Maximum Memory Pitch:          2147483647B
+Texture Alignment:             512B
+Clock Rate:                    1150 MHz
+Execution Timeout:             No
+Integrated Device:             No
+Can Map Host Memory:           Yes
+Compute Mode:                  default
+Concurrent Kernels:            Yes
+ECC Enabled:                   No
+Memory Clock Rate:             2700 MHz
+Memory Bus Width:              128 bits
+L2 Cache Size:                 2097152 bytes
+Max Threads Per SMP:           2048
+Async Engines:                 1
+Unified Addressing:            Yes
+Managed Memory:                Yes
+Concurrent Managed Memory:     No
+Default Target:                cc50
 
 ```
 
