@@ -3,10 +3,18 @@
 ```ruby
 aolin23.uab.es
 *****************************************
-unrecognised option '--print-grpu-trace'
+WARNING: loops and any of its children processes will be profiled.
 
-usage: nsys nvprof [<args>] [application] [<application args>]
-Try 'nsys nvprof --help' for more information.
+Collecting data...
+
+The target application terminated with signal 4 (SIGILL)
+Processing events...
+Saving temporary "/tmp/nsys-report-aba0-a14b-ffdc-d6d0.qdstrm" file to disk...
+Creating final output files...
+
+^MProcessing [0%                                                                ]^MProcessing [==============================50%                                 ]^MProcessing [==============================================================100%]^MProcessing [============================48%                                   ]^MProcessing [=============================================74%                  ]^MProcessing [==============================================================99% ]^MProcessing [==============================================================100%]
+Saved report file to "/tmp/nsys-report-aba0-a14b-ffdc-d6d0.qdrep"
+
 
 ```
 
