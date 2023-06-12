@@ -1,5 +1,49 @@
 # Biophysics
 
+```ruby
+aolin23.uab.es
+*****************************************
+
+CUDA Driver Version:           11020
+NVRM version:                  NVIDIA UNIX x86_64 Kernel Module  460.32.03  Sun Dec 27 19:00:34 UTC 2020
+
+Device Number:                 0
+Device Name:                   GeForce RTX 3080
+Device Revision Number:        8.6
+Global Memory Size:            10504306688
+Number of Multiprocessors:     68
+Concurrent Copy and Execution: Yes
+Total Constant Memory:         65536
+Total Shared Memory per Block: 49152
+Registers per Block:           65536
+Warp Size:                     32
+Maximum Threads per Block:     1024
+Maximum Block Dimensions:      1024, 1024, 64
+Maximum Grid Dimensions:       2147483647 x 65535 x 65535
+Maximum Memory Pitch:          2147483647B
+Texture Alignment:             512B
+Clock Rate:                    1710 MHz
+Execution Timeout:             No
+Integrated Device:             No
+Can Map Host Memory:           Yes
+Compute Mode:                  default
+Concurrent Kernels:            Yes
+ECC Enabled:                   No
+Memory Clock Rate:             9501 MHz
+Memory Bus Width:              320 bits
+L2 Cache Size:                 5242880 bytes
+Max Threads Per SMP:           1536
+Async Engines:                 2
+Unified Addressing:            Yes
+Managed Memory:                Yes
+Concurrent Managed Memory:     Yes
+Preemption Supported:          Yes
+Cooperative Launch:            Yes
+  Multi-Device:                Yes
+Default Target:                cc80
+
+```
+
 Here is the source code for an exercise about the **evaluation energy Spike RBD-ACE2 protein-protein interface analysis** using Jupyter-notebook. The objective of this project was to evaluate the contribution of each of the interface residues to the interaction energy in a specific protein-protein complex. 
 
 ## Index
