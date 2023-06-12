@@ -1,21 +1,12 @@
 # Biophysics
 
 ```ruby
-loop_1:
-     17, Intensity = 0.0
-         Memory set idiom, loop replaced by call to __c_mset4
-     18, Intensity = 0.0
-         Generating implicit allocate(x[:1000]) [if not already present]
-         Generating implicit copyin(x[:999]) [if not already present]
-         Generating implicit copyout(x[1:999]) [if not already present]
-     21, Intensity = 0.50    
-         Loop is parallelizable
-         Generating Tesla code
-         21, #pragma acc loop gang, vector(128) /* blockIdx.x threadIdx.x */
+aolin23.uab.es
+*****************************************
+unrecognised option '--print-grpu-trace'
 
-
-
-
+usage: nsys nvprof [<args>] [application] [<application args>]
+Try 'nsys nvprof --help' for more information.
 
 ```
 
