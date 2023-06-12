@@ -1,40 +1,22 @@
 # Biophysics
 
 ```ruby
-loop_1:
-     17, Intensity = 0.0
-         Memory set idiom, loop replaced by call to __c_mset4
-     18, Intensity = 0.0
-         Generating implicit allocate(x[:1000]) [if not already present]
-         Generating implicit copyin(x[:999]) [if not already present]
-         Generating implicit copyout(x[1:999]) [if not already present]
-     21, Intensity = 0.50    
-         Loop carried dependence of x-> prevents parallelization
-         Loop carried backward dependence of x-> prevents vectorization
-         Accelerator serial kernel generated
-         Generating Tesla code
-         21, #pragma acc loop seq
-loop_2:
-     33, Intensity = 0.0
-     36, Intensity = 0.0
-         Generating implicit copyin(x[:1000]) [if not already present]
-         Generating implicit copy(y[:1000]) [if not already present]
-     38, Intensity = 0.67    
-         Complex loop carried dependence of x-> prevents parallelization
-         Loop carried dependence of y-> prevents parallelization
-         Loop carried backward dependence of y-> prevents vectorization
-         Accelerator serial kernel generated
-         Generating Tesla code
-         38, #pragma acc loop seq
-loop_3:
-     50, Intensity = 0.0
-     53, Intensity = 0.0
-         Generating implicit copyin(x[:1000]) [if not already present]
-         Generating implicit copy(y[:1000]) [if not already present]
-     55, Intensity = 0.67    
-         Loop is parallelizable
-         Generating Tesla code
-         55, #pragma acc loop gang, vector(128) /* blockIdx.x threadIdx.x */
+void loop_2() {
+    int N = 1000;
+    float a = 3.0f;
+    float* restrict x = (float*)malloc(N * sizeof(float));
+    float* restrict y = (float*)malloc(N * sizeof(float));
+
+    for (int i = 0; i < N; ++i) {
+        x[i] = 2.0f;
+        y[i] = 1.0f;
+    }
+
+    #pragma acc kernels
+    for (int i = 0; i < N; ++i) {
+        y[i] = a * x[i] + y[i];
+    }
+}
 
 
 ```
