@@ -1,78 +1,41 @@
 # Biophysics
 
 ```ruby
-aoclsd.uab.cat
-*****************************************
+loop_1:
+     17, Intensity = 0.0
+         Memory set idiom, loop replaced by call to __c_mset4
+     18, Intensity = 0.0
+         Generating implicit allocate(x[:1000]) [if not already present]
+         Generating implicit copyin(x[:999]) [if not already present]
+         Generating implicit copyout(x[1:999]) [if not already present]
+     21, Intensity = 0.50    
+         Loop carried dependence of x-> prevents parallelization
+         Loop carried backward dependence of x-> prevents vectorization
+         Accelerator serial kernel generated
+         Generating Tesla code
+         21, #pragma acc loop seq
+loop_2:
+     33, Intensity = 0.0
+     36, Intensity = 0.0
+         Generating implicit copyin(x[:1000]) [if not already present]
+         Generating implicit copy(y[:1000]) [if not already present]
+     38, Intensity = 0.67    
+         Complex loop carried dependence of x-> prevents parallelization
+         Loop carried dependence of y-> prevents parallelization
+         Loop carried backward dependence of y-> prevents vectorization
+         Accelerator serial kernel generated
+         Generating Tesla code
+         38, #pragma acc loop seq
+loop_3:
+     50, Intensity = 0.0
+     53, Intensity = 0.0
+         Generating implicit copyin(x[:1000]) [if not already present]
+         Generating implicit copy(y[:1000]) [if not already present]
+     55, Intensity = 0.67    
+         Loop is parallelizable
+         Generating Tesla code
+         55, #pragma acc loop gang, vector(128) /* blockIdx.x threadIdx.x */
 
-CUDA Driver Version:           11030
-NVRM version:                  NVIDIA UNIX x86_64 Kernel Module  465.19.01  Fri Mar 19 07:44:41 UTC 2021
-
-Device Number:                 0
-Device Name:                   NVIDIA GeForce RTX 2070
-Device Revision Number:        7.5
-Global Memory Size:            8370061312
-Number of Multiprocessors:     36
-Concurrent Copy and Execution: Yes
-Total Constant Memory:         65536
-Total Shared Memory per Block: 49152
-Registers per Block:           65536
-Warp Size:                     32
-Maximum Threads per Block:     1024
-Maximum Block Dimensions:      1024, 1024, 64
-Maximum Grid Dimensions:       2147483647 x 65535 x 65535
-Maximum Memory Pitch:          2147483647B
-Texture Alignment:             512B
-Clock Rate:                    1620 MHz
-Execution Timeout:             No
-Integrated Device:             No
-Can Map Host Memory:           Yes
-Compute Mode:                  default
-Concurrent Kernels:            Yes
-ECC Enabled:                   No
-Memory Clock Rate:             7001 MHz
-Memory Bus Width:              256 bits
-L2 Cache Size:                 4194304 bytes
-Max Threads Per SMP:           1024
-Async Engines:                 3
-Unified Addressing:            Yes
-Managed Memory:                Yes
-Concurrent Managed Memory:     Yes
-Preemption Supported:          Yes
-Cooperative Launch:            Yes
-  Multi-Device:                Yes
-Default Target:                cc75
-
-Device Number:                 1
-Device Name:                   NVIDIA GeForce GTX 750 Ti
-Device Revision Number:        5.0
-Global Memory Size:            2099052544
-Number of Multiprocessors:     5
-Concurrent Copy and Execution: Yes
-Total Constant Memory:         65536
-Total Shared Memory per Block: 49152
-Registers per Block:           65536
-Warp Size:                     32
-Maximum Threads per Block:     1024
-Maximum Block Dimensions:      1024, 1024, 64
-Maximum Grid Dimensions:       2147483647 x 65535 x 65535
-Maximum Memory Pitch:          2147483647B
-Texture Alignment:             512B
-Clock Rate:                    1150 MHz
-Execution Timeout:             No
-Integrated Device:             No
-Can Map Host Memory:           Yes
-Compute Mode:                  default
-Concurrent Kernels:            Yes
-ECC Enabled:                   No
-Memory Clock Rate:             2700 MHz
-Memory Bus Width:              128 bits
-L2 Cache Size:                 2097152 bytes
-Max Threads Per SMP:           2048
-Async Engines:                 1
-Unified Addressing:            Yes
-Managed Memory:                Yes
-Concurrent Managed Memory:     No
-Default Target:                cc50
 
 ```
 
