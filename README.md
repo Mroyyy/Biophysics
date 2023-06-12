@@ -1,18 +1,18 @@
 # Biophysics
 
 ```ruby
-void loop_1() {
-    int N = 1000;
-    float a = 3.0f;
-    float* x = (float*)malloc(N * sizeof(float));
+loop_1:
+     17, Intensity = 0.0
+         Memory set idiom, loop replaced by call to __c_mset4
+     18, Intensity = 0.0
+         Generating implicit allocate(x[:1000]) [if not already present]
+         Generating implicit copyin(x[:999]) [if not already present]
+         Generating implicit copyout(x[1:999]) [if not already present]
+     21, Intensity = 0.50    
+         Loop is parallelizable
+         Generating Tesla code
+         21, #pragma acc loop gang, vector(128) /* blockIdx.x threadIdx.x */
 
-    for (int i = 0; i < N; ++i)
-        x[i] = 2.0f;
-
-    #pragma acc kernels loop independent
-    for (int i = 1; i < N; i++)
-        x[i] = a * x[i-1];
-}
 
 
 
