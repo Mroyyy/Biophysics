@@ -1,178 +1,66 @@
 # Biophysics
 
 ```ruby
-#SBATCH --job-name=hellohybrid
-#SBATCH --output=hellohybrid_%j.out
-#SBATCH --nodes=2
-#SBATCH --tasks=2      	 
-#SBATCH --tasks-per-node=1
-#SBATCH --ntasks-per-socket=1
-#SBATCH --cpus-per-task=6
-#SBATCH --partition=nodo.q
-
-# Load the default OpenMPI module.
-
-module load openmpi/4.1.4
-
-# Set OMP_NUM_THREADS to the number of CPUs per task we asked for
-
-export OMP_NUM_THREADS=6
-
-# Run the process with mpirun. Note that the -n option is not required
-# in this case; mpirun will automatically determine how many processes
-# to run from the Slurm settings.
-
-mpirun hellohybrid
-
+cpu-bind=MASK - clus11, task  0  0 [36543]: mask 0x1c7 set
+Hello from thread 0 out of 3 from process 0 out of 4 on clus11.hpc.local ; SLEEP: 100
+Hello from thread 2 out of 3 from process 0 out of 4 on clus11.hpc.local ; SLEEP: 100
+Hello from thread 1 out of 3 from process 0 out of 4 on clus11.hpc.local ; SLEEP: 100
+Hello from thread 0 out of 3 from process 1 out of 4 on clus11.hpc.local ; SLEEP: 100
+Hello from thread 2 out of 3 from process 1 out of 4 on clus11.hpc.local ; SLEEP: 100
+Hello from thread 1 out of 3 from process 1 out of 4 on clus11.hpc.local ; SLEEP: 100
+Hello from thread 0 out of 3 from process 3 out of 4 on clus12.hpc.local ; SLEEP: 100
+Hello from thread 2 out of 3 from process 3 out of 4 on clus12.hpc.local ; SLEEP: 100
+Hello from thread 1 out of 3 from process 3 out of 4 on clus12.hpc.local ; SLEEP: 100
+Hello from thread 0 out of 3 from process 2 out of 4 on clus12.hpc.local ; SLEEP: 100
+Hello from thread 2 out of 3 from process 2 out of 4 on clus12.hpc.local ; SLEEP: 100
+Hello from thread 1 out of 3 from process 2 out of 4 on clus12.hpc.local ; SLEEP: 100
 
 ```
 
 
 ```ruby
-cpu-bind=MASK - clus11, task  0  0 [33642]: mask 0x3f set
-Hello from thread 0 out of 6 from process 0 out of 2 on clus11.hpc.local ; SLEEP: 100
-Hello from thread 5 out of 6 from process 0 out of 2 on clus11.hpc.local ; SLEEP: 100
-Hello from thread 4 out of 6 from process 0 out of 2 on clus11.hpc.local ; SLEEP: 100
-Hello from thread 3 out of 6 from process 0 out of 2 on clus11.hpc.local ; SLEEP: 100
-Hello from thread 2 out of 6 from process 0 out of 2 on clus11.hpc.local ; SLEEP: 100
-Hello from thread 1 out of 6 from process 0 out of 2 on clus11.hpc.local ; SLEEP: 100
-Hello from thread 0 out of 6 from process 1 out of 2 on clus12.hpc.local ; SLEEP: 100
-Hello from thread 5 out of 6 from process 1 out of 2 on clus12.hpc.local ; SLEEP: 100
-Hello from thread 4 out of 6 from process 1 out of 2 on clus12.hpc.local ; SLEEP: 100
-Hello from thread 3 out of 6 from process 1 out of 2 on clus12.hpc.local ; SLEEP: 100
-Hello from thread 2 out of 6 from process 1 out of 2 on clus12.hpc.local ; SLEEP: 100
-Hello from thread 1 out of 6 from process 1 out of 2 on clus12.hpc.local ; SLEEP: 100
+cpu-bind=MASK - clus01, task  0  0 [41097]: mask 0x3f set
+Hello from thread 0 out of 6 from process 0 out of 4 on clus01.hpc.local ; SLEEP: 50
+Hello from thread 5 out of 6 from process 0 out of 4 on clus01.hpc.local ; SLEEP: 50
+Hello from thread 4 out of 6 from process 0 out of 4 on clus01.hpc.local ; SLEEP: 50
+Hello from thread 3 out of 6 from process 0 out of 4 on clus01.hpc.local ; SLEEP: 50
+Hello from thread 2 out of 6 from process 0 out of 4 on clus01.hpc.local ; SLEEP: 50
+Hello from thread 1 out of 6 from process 0 out of 4 on clus01.hpc.local ; SLEEP: 50
+Hello from thread 0 out of 6 from process 3 out of 4 on clus04.hpc.local ; SLEEP: 50
+Hello from thread 5 out of 6 from process 3 out of 4 on clus04.hpc.local ; SLEEP: 50
+Hello from thread 4 out of 6 from process 3 out of 4 on clus04.hpc.local ; SLEEP: 50
+Hello from thread 3 out of 6 from process 3 out of 4 on clus04.hpc.local ; SLEEP: 50
+Hello from thread 2 out of 6 from process 3 out of 4 on clus04.hpc.local ; SLEEP: 50
+Hello from thread 1 out of 6 from process 3 out of 4 on clus04.hpc.local ; SLEEP: 50
+Hello from thread 0 out of 6 from process 2 out of 4 on clus03.hpc.local ; SLEEP: 50
+Hello from thread 5 out of 6 from process 2 out of 4 on clus03.hpc.local ; SLEEP: 50
+Hello from thread 4 out of 6 from process 2 out of 4 on clus03.hpc.local ; SLEEP: 50
+Hello from thread 3 out of 6 from process 2 out of 4 on clus03.hpc.local ; SLEEP: 50
+Hello from thread 2 out of 6 from process 2 out of 4 on clus03.hpc.local ; SLEEP: 50
+Hello from thread 1 out of 6 from process 2 out of 4 on clus03.hpc.local ; SLEEP: 50
+Hello from thread 0 out of 6 from process 1 out of 4 on clus02.hpc.local ; SLEEP: 50
+Hello from thread 5 out of 6 from process 1 out of 4 on clus02.hpc.local ; SLEEP: 50
+Hello from thread 4 out of 6 from process 1 out of 4 on clus02.hpc.local ; SLEEP: 50
+Hello from thread 3 out of 6 from process 1 out of 4 on clus02.hpc.local ; SLEEP: 50
+Hello from thread 2 out of 6 from process 1 out of 4 on clus02.hpc.local ; SLEEP: 50
+Hello from thread 1 out of 6 from process 1 out of 4 on clus02.hpc.local ; SLEEP: 50
 
 
 ```
+
+
 
 
 ```ruby
-#SBATCH --job-name=hellohybrid
-#SBATCH --output=hellohybrid_%j.out
-#SBATCH --nodes=2
-#SBATCH --tasks=4      	 
-#SBATCH --tasks-per-node=2
-#SBATCH --ntasks-per-socket=1
-#SBATCH --cpus-per-task=3
-#SBATCH --partition=nodo.q
-
-# Load the default OpenMPI module.
-
-module load openmpi/4.1.4
-
-# Set OMP_NUM_THREADS to the number of CPUs per task we asked for
-
-export OMP_NUM_THREADS=3
-
-# Run the process with mpirun. Note that the -n option is not required
-# in this case; mpirun will automatically determine how many processes
-# to run from the Slurm settings.
-
-mpirun hellohybrid
 
 
-```
-```ruby
-#SBATCH --job-name=hellohybrid
-#SBATCH --output=hellohybrid_%j.out
-#SBATCH --nodes=4
-#SBATCH --tasks=4     	 
-#SBATCH --tasks-per-node=1
-#SBATCH --ntasks-per-socket=1
-#SBATCH --cpus-per-task=6
-#SBATCH --partition=nodo.q
-
-# Load the default OpenMPI module.
-
-module load openmpi/4.1.4
-
-# Set OMP_NUM_THREADS to the number of CPUs per task we asked for
-
-export OMP_NUM_THREADS=6
-
-# Run the process with mpirun. Note that the -n option is not required
-# in this case; mpirun will automatically determine how many processes
-# to run from the Slurm settings.
-
-mpirun hellohybrid
-```
-
-
-```ruby
-#SBATCH --job-name=hellohybrid
-#SBATCH --output=hellohybrid_%j.out
-#SBATCH --nodes=4
-#SBATCH --tasks=8      	 
-#SBATCH --tasks-per-node=2
-#SBATCH --ntasks-per-socket=1
-#SBATCH --cpus-per-task=3
-#SBATCH --partition=nodo.q
-
-# Load the default OpenMPI module.
-
-module load openmpi/4.1.4
-
-# Set OMP_NUM_THREADS to the number of CPUs per task we asked for
-
-export OMP_NUM_THREADS=3
-
-# Run the process with mpirun. Note that the -n option is not required
-# in this case; mpirun will automatically determine how many processes
-# to run from the Slurm settings.
-
-mpirun hellohybrid
 ```
 
 ```ruby
-#SBATCH --job-name=hellohybrid
-#SBATCH --output=hellohybrid_%j.out
-#SBATCH --nodes=10
-#SBATCH --tasks=10     	 
-#SBATCH --tasks-per-node=1
-#SBATCH --ntasks-per-socket=1
-#SBATCH --cpus-per-task=6
-#SBATCH --partition=nodo.q
 
-# Load the default OpenMPI module.
-
-module load openmpi/4.1.4
-
-# Set OMP_NUM_THREADS to the number of CPUs per task we asked for
-
-export OMP_NUM_THREADS=6
-
-# Run the process with mpirun. Note that the -n option is not required
-# in this case; mpirun will automatically determine how many processes
-# to run from the Slurm settings.
-
-mpirun hellohybrid
 ```
 
-```ruby
-#SBATCH --job-name=hellohybrid
-#SBATCH --output=hellohybrid_%j.out
-#SBATCH --nodes=10
-#SBATCH --tasks=20     	 
-#SBATCH --tasks-per-node=2
-#SBATCH --ntasks-per-socket=1
-#SBATCH --cpus-per-task=3
-#SBATCH --partition=nodo.q
 
-# Load the default OpenMPI module.
-
-module load openmpi/4.1.4
-
-# Set OMP_NUM_THREADS to the number of CPUs per task we asked for
-
-export OMP_NUM_THREADS=3
-
-# Run the process with mpirun. Note that the -n option is not required
-# in this case; mpirun will automatically determine how many processes
-# to run from the Slurm settings.
-
-mpirun hellohybrid
-```
 
 
 
