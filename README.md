@@ -7,7 +7,8 @@ import subprocess
 
 # Function to submit a SLURM job and return its job ID
 def submit_job(script):
-	result = subprocess.run(["sbatch", "--parsable", script], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+	result = subprocess.run(["sbatch", "--parsable", script], stdout=subprocess.PIPE, 
+	stderr=subprocess.PIPE, text=True)
 	job_id = result.stdout.strip()
 	return job_id
 
