@@ -1,5 +1,55 @@
 # Biophysics
 
+```ruby
+#!/bin/bash
+#SBATCH --job-name=sort_job_array
+#SBATCH --output=sort_job_array_%A.out
+#SBATCH --array=0-4
+
+#Specify the input and output files
+in_prefix="names_"
+out_suffix=".sorted"
+
+jobid=$((SLURM_ARRAY_JOB_ID))
+taskid=$((SLURM_ARRAY_TASK_ID))
+max_taskid=${SLURM_ARRAY_TASK_MAX}
+min_taskid=${SLURM_ARRAY_TASK_MIN}
+total_task=$((max_taskid - min_taskid + 1))
+range=$((total_task/total_files))
+
+start_taskid=$((min_taskid + (taskid*range)))
+end_taskid=$((start_taskid + range -1))
+
+input_file="${in_prefix}${taskid}.txt"
+output_file="${in_prefix}${taskid}${out_suffix}"
+
+sort "$input_file" > "$output_file"
+
+echo "Sorted $input_file and saved as $output_file"
+
+```
+
+
+```ruby
+cpu-bind=MASK - clus11, task  0  0 [30387]: mask 0x8 set
+cpu-bind=MASK - clus11, task  0  0 [30389]: mask 0x10 set
+Sorted names_1.txt and saved as names_1.sorted
+Sorted names_0.txt and saved as names_0.sorted
+Sorted names_2.txt and saved as names_2.sorted
+Sorted names_3.txt and saved as names_3.sorted
+Sorted names_4.txt and saved as names_4.sorted
+```
+
+
+```ruby
+[biohpc-38@clus-login SLURM]$ ls
+hellohybrid.c  	names_0.sorted  	names_1.sorted  	names_2.sorted  	names_3.sorted  	names_4.sorted  	sorting_job_178072.out 	sort_job.sh
+hellohybrid.slurm  names_0.txt     	names_1.txt     	names_2.txt     	names_3.txt     	names_4.txt     	sort_job_array_178735.out
+job_dep.py     	names_0.txt.sorted  names_1.txt.sorted  names_2.txt.sorted  names_3.txt.sorted  names_4.txt.sorted  sort_job_array.sh
+
+```
+
+
 Here is the source code for an exercise about the **evaluation energy Spike RBD-ACE2 protein-protein interface analysis** using Jupyter-notebook. The objective of this project was to evaluate the contribution of each of the interface residues to the interaction energy in a specific protein-protein complex. 
 
 ## Index
