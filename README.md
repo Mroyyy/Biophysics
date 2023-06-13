@@ -1,79 +1,12 @@
 # Biophysics
 
 ```ruby
-#!/usr/bin/env python
-import subprocess
-
 
 # Function to submit a SLURM job and return its job ID
 def submit_job(script):
-	result = subprocess.run(["sbatch", "--parsable", script], stdout=subprocess.PIPE, 
-	stderr=subprocess.PIPE, text=True)
-	job_id = result.stdout.strip()
-	return job_id
-
-# Job 1
-job1_script = "job1.sh"
-job1_content = """
-#!/bin/bash
-#SBATCH -J job1
-#SBATCH -o job1.out
-#SBATCH -e job1.err
-
-# Job 1 commands here
-"""
-with open(job1_script, "w") as f:
-	f.write(job1_content)
-
-job1_id = submit_job(job1_script)
-
-# Job 2
-job2_script = "job2.sh"
-job2_content = f"""
-#!/bin/bash
-#SBATCH -J job2
-#SBATCH -o job2.out
-#SBATCH -e job2.err
-#SBATCH --dependency=afterok:{job1_id}
-
-# Job 2 commands here
-"""
-with open(job2_script, "w") as f:
-	f.write(job2_content)
-
-job2_id = submit_job(job2_script)
-
-# Job 3
-job3_script = "job3.sh"
-job3_content = f"""
-#!/bin/bash
-#SBATCH -J job3
-#SBATCH -o job3.out
-#SBATCH -e job3.err
-#SBATCH --dependency=afterok:{job1_id}
-
-# Job 3 commands here
-"""
-with open(job3_script, "w") as f:
-	f.write(job3_content)
-
-job3_id = submit_job(job3_script)
-
-# Job 4
-job4_script = "job4.sh"
-job4_content = f"""
-#!/bin/bash
-#SBATCH -J job4
-#SBATCH -o job4.out
-#SBATCH -e job4.err
-#SBATCH --dependency=afterok:{job2_id}:{job3_id}
-
-# Job 4 commands here
-"""
-with open(job4_script, "w") as f:
-    f.write(job4_content)
-
-submit_job(job4_script)
+    result = subprocess.run(["sbatch", script], capture_output=True, text=True)
+    job_id = result.stdout.strip().split()[-1]  # Extract the last field which contains the job ID
+    return job_id
 
 
 ```
