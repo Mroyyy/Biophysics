@@ -43,9 +43,12 @@ Sorted names_4.txt and saved as names_4.sorted
 
 ```ruby
 [biohpc-38@clus-login SLURM]$ ls
-hellohybrid.c  	names_0.sorted  	names_1.sorted  	names_2.sorted  	names_3.sorted  	names_4.sorted  	sorting_job_178072.out 	sort_job.sh
-hellohybrid.slurm  names_0.txt     	names_1.txt     	names_2.txt     	names_3.txt     	names_4.txt     	sort_job_array_178735.out
-job_dep.py     	names_0.txt.sorted  names_1.txt.sorted  names_2.txt.sorted  names_3.txt.sorted  names_4.txt.sorted  sort_job_array.sh
+hellohybrid.c  	names_0.sorted  	names_1.sorted  	names_2.sorted  	
+names_3.sorted  	names_4.sorted  	sorting_job_178072.out 	sort_job.sh
+hellohybrid.slurm  names_0.txt     	names_1.txt     	names_2.txt     	
+names_3.txt     	names_4.txt     	sort_job_array_178735.out
+job_dep.py     	names_0.txt.sorted  names_1.txt.sorted  names_2.txt.sorted  
+names_3.txt.sorted  names_4.txt.sorted  sort_job_array.sh
 
 ```
 
