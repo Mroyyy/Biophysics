@@ -1,52 +1,78 @@
 # Biophysics
 
 ```ruby
-[biohpc-28@aolin-login OpenACC]$ nsys stats report3.qdrep 
-Using report3.sqlite for SQL queries.
-Running [/soft/nvidia-hpc-sdk-2021-21.2/Linux_x86_64/21.2/profilers/Nsight_Systems/target-linux-x64/reports/cudaapisum.py report3.sqlite]... 
+#!/usr/bin/env python
+import subprocess
 
- Time(%)  Total Time (ns)  Num Calls    Average      Minimum     Maximum            Name        
- -------  ---------------  ---------  ------------  ----------  ----------  --------------------
-    93,0       12.373.190          1  12.373.190,0  12.373.190  12.373.190  cuMemHostAlloc      
-     3,0          464.805          1     464.805,0     464.805     464.805  cuMemAllocHost_v2   
-     1,0          143.647          3      47.882,0       4.597     127.226  cuMemAlloc_v2       
-     0,0           72.885          1      72.885,0      72.885      72.885  cuModuleLoadDataEx  
-     0,0           54.308          3      18.102,0       7.770      37.462  cuLaunchKernel      
-     0,0           51.429          5      10.285,0       3.761      31.375  cuMemcpyHtoDAsync_v2
-     0,0           25.892          9       2.876,0       1.369       7.266  cuStreamSynchronize 
-     0,0           22.904          3       7.634,0       5.039      11.588  cuMemcpyDtoHAsync_v2
-     0,0           14.429          1      14.429,0      14.429      14.429  cuStreamCreate      
-     0,0            7.129          3       2.376,0       1.387       4.152  cuEventRecord       
-     0,0            3.604          2       1.802,0         362       3.242  cuEventCreate       
-     0,0            2.974          3         991,0         553       1.558  cuEventSynchronize  
 
-Running [/soft/nvidia-hpc-sdk-2021-21.2/Linux_x86_64/21.2/profilers/Nsight_Systems/target-linux-x64/reports/gpukernsum.py report3.sqlite]... 
+# Function to submit a SLURM job and return its job ID
+def submit_job(script):
+	result = subprocess.run(["sbatch", "--parsable", script], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+	job_id = result.stdout.strip()
+	return job_id
 
- Time(%)  Total Time (ns)  Instances  Average  Minimum  Maximum      Name     
- -------  ---------------  ---------  -------  -------  -------  -------------
-    33,0            2.176          1  2.176,0    2.176    2.176  loop_2_38_gpu
-    33,0            2.144          1  2.144,0    2.144    2.144  loop_1_21_gpu
-    32,0            2.113          1  2.113,0    2.113    2.113  loop_3_55_gpu
+# Job 1
+job1_script = "job1.sh"
+job1_content = """
+#!/bin/bash
+#SBATCH -J job1
+#SBATCH -o job1.out
+#SBATCH -e job1.err
 
-Running [/soft/nvidia-hpc-sdk-2021-21.2/Linux_x86_64/21.2/profilers/Nsight_Systems/target-linux-x64/reports/gpumemtimesum.py report3.sqlite]... 
+# Job 1 commands here
+"""
+with open(job1_script, "w") as f:
+	f.write(job1_content)
 
- Time(%)  Total Time (ns)  Operations  Average  Minimum  Maximum      Operation     
- -------  ---------------  ----------  -------  -------  -------  ------------------
-    58,0            4.576           5    915,0      832    1.120  [CUDA memcpy HtoD]
-    41,0            3.295           3  1.098,0      959    1.376  [CUDA memcpy DtoH]
+job1_id = submit_job(job1_script)
 
-Running [/soft/nvidia-hpc-sdk-2021-21.2/Linux_x86_64/21.2/profilers/Nsight_Systems/target-linux-x64/reports/gpumemsizesum.py report3.sqlite]... 
+# Job 2
+job2_script = "job2.sh"
+job2_content = f"""
+#!/bin/bash
+#SBATCH -J job2
+#SBATCH -o job2.out
+#SBATCH -e job2.err
+#SBATCH --dependency=afterok:{job1_id}
 
-Total   Operations  Average  Minimum  Maximum      Operation     
- ------  ----------  -------  -------  -------  ------------------
- 19,000           5    3,000    3,000    3,000  [CUDA memcpy HtoD]
- 11,000           3    3,000    3,000    3,000  [CUDA memcpy DtoH]
+# Job 2 commands here
+"""
+with open(job2_script, "w") as f:
+	f.write(job2_content)
 
-Running [/soft/nvidia-hpc-sdk-2021-21.2/Linux_x86_64/21.2/profilers/Nsight_Systems/target-linux-x64/reports/osrtsum.py report3.sqlite]... SKIPPED: report3.sqlite does not contain OS Runtime trace data
+job2_id = submit_job(job2_script)
 
-Running [/soft/nvidia-hpc-sdk-2021-21.2/Linux_x86_64/21.2/profilers/Nsight_Systems/target-linux-x64/reports/nvtxppsum.py report3.sqlite]... SKIPPED: report3.sqlite does not contain NV Tools Extension (NVTX) data
+# Job 3
+job3_script = "job3.sh"
+job3_content = f"""
+#!/bin/bash
+#SBATCH -J job3
+#SBATCH -o job3.out
+#SBATCH -e job3.err
+#SBATCH --dependency=afterok:{job1_id}
 
-Running [/soft/nvidia-hpc-sdk-2021-21.2/Linux_x86_64/21.2/profilers/Nsight_Systems/target-linux-x64/reports/openmpevtsum.py report3.sqlite]... SKIPPED: report3.sqlite does not contain OpenMP event data.
+# Job 3 commands here
+"""
+with open(job3_script, "w") as f:
+	f.write(job3_content)
+
+job3_id = submit_job(job3_script)
+
+# Job 4
+job4_script = "job4.sh"
+job4_content = f"""
+#!/bin/bash
+#SBATCH -J job4
+#SBATCH -o job4.out
+#SBATCH -e job4.err
+#SBATCH --dependency=afterok:{job2_id}:{job3_id}
+
+# Job 4 commands here
+"""
+with open(job4_script, "w") as f:
+    f.write(job4_content)
+
+submit_job(job4_script)
 
 
 ```
