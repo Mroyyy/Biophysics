@@ -1,67 +1,52 @@
 # Biophysics
 
 ```ruby
-cpu-bind=MASK - clus01, task  0  0 [41259]: mask 0x3f set
-Hello from thread 0 out of 6 from process 0 out of 10 on clus01.hpc.local ; SLEEP: 20
-Hello from thread 5 out of 6 from process 0 out of 10 on clus01.hpc.local ; SLEEP: 20
-Hello from thread 4 out of 6 from process 0 out of 10 on clus01.hpc.local ; SLEEP: 20
-Hello from thread 3 out of 6 from process 0 out of 10 on clus01.hpc.local ; SLEEP: 20
-Hello from thread 2 out of 6 from process 0 out of 10 on clus01.hpc.local ; SLEEP: 20
-Hello from thread 1 out of 6 from process 0 out of 10 on clus01.hpc.local ; SLEEP: 20
-Hello from thread 0 out of 6 from process 4 out of 10 on clus05.hpc.local ; SLEEP: 20
-Hello from thread 5 out of 6 from process 4 out of 10 on clus05.hpc.local ; SLEEP: 20
-Hello from thread 4 out of 6 from process 4 out of 10 on clus05.hpc.local ; SLEEP: 20
-Hello from thread 3 out of 6 from process 4 out of 10 on clus05.hpc.local ; SLEEP: 20
-Hello from thread 2 out of 6 from process 4 out of 10 on clus05.hpc.local ; SLEEP: 20
-Hello from thread 0 out of 6 from process 3 out of 10 on clus04.hpc.local ; SLEEP: 20
-Hello from thread 5 out of 6 from process 3 out of 10 on clus04.hpc.local ; SLEEP: 20
-Hello from thread 4 out of 6 from process 3 out of 10 on clus04.hpc.local ; SLEEP: 20
-Hello from thread 3 out of 6 from process 3 out of 10 on clus04.hpc.local ; SLEEP: 20
-Hello from thread 2 out of 6 from process 3 out of 10 on clus04.hpc.local ; SLEEP: 20
-Hello from thread 0 out of 6 from process 2 out of 10 on clus03.hpc.local ; SLEEP: 20
-Hello from thread 5 out of 6 from process 2 out of 10 on clus03.hpc.local ; SLEEP: 20
-Hello from thread 4 out of 6 from process 2 out of 10 on clus03.hpc.local ; SLEEP: 20
-Hello from thread 3 out of 6 from process 2 out of 10 on clus03.hpc.local ; SLEEP: 20
-Hello from thread 2 out of 6 from process 2 out of 10 on clus03.hpc.local ; SLEEP: 20
-Hello from thread 0 out of 6 from process 1 out of 10 on clus02.hpc.local ; SLEEP: 20
-Hello from thread 5 out of 6 from process 1 out of 10 on clus02.hpc.local ; SLEEP: 20
-Hello from thread 4 out of 6 from process 1 out of 10 on clus02.hpc.local ; SLEEP: 20
-Hello from thread 3 out of 6 from process 1 out of 10 on clus02.hpc.local ; SLEEP: 20
-Hello from thread 2 out of 6 from process 1 out of 10 on clus02.hpc.local ; SLEEP: 20
-Hello from thread 1 out of 6 from process 1 out of 10 on clus02.hpc.local ; SLEEP: 20
-Hello from thread 0 out of 6 from process 7 out of 10 on clus08.hpc.local ; SLEEP: 20
-Hello from thread 5 out of 6 from process 7 out of 10 on clus08.hpc.local ; SLEEP: 20
-Hello from thread 4 out of 6 from process 7 out of 10 on clus08.hpc.local ; SLEEP: 20
-Hello from thread 3 out of 6 from process 7 out of 10 on clus08.hpc.local ; SLEEP: 20
-Hello from thread 2 out of 6 from process 7 out of 10 on clus08.hpc.local ; SLEEP: 20
-Hello from thread 1 out of 6 from process 7 out of 10 on clus08.hpc.local ; SLEEP: 20
-Hello from thread 0 out of 6 from process 5 out of 10 on clus06.hpc.local ; SLEEP: 20
-Hello from thread 5 out of 6 from process 5 out of 10 on clus06.hpc.local ; SLEEP: 20
-Hello from thread 4 out of 6 from process 5 out of 10 on clus06.hpc.local ; SLEEP: 20
-Hello from thread 3 out of 6 from process 5 out of 10 on clus06.hpc.local ; SLEEP: 20
-Hello from thread 2 out of 6 from process 5 out of 10 on clus06.hpc.local ; SLEEP: 20
-Hello from thread 0 out of 6 from process 6 out of 10 on clus07.hpc.local ; SLEEP: 20
-Hello from thread 5 out of 6 from process 6 out of 10 on clus07.hpc.local ; SLEEP: 20
-Hello from thread 4 out of 6 from process 6 out of 10 on clus07.hpc.local ; SLEEP: 20
-Hello from thread 3 out of 6 from process 6 out of 10 on clus07.hpc.local ; SLEEP: 20
-Hello from thread 2 out of 6 from process 6 out of 10 on clus07.hpc.local ; SLEEP: 20
-Hello from thread 1 out of 6 from process 6 out of 10 on clus07.hpc.local ; SLEEP: 20
-Hello from thread 0 out of 6 from process 9 out of 10 on clus12.hpc.local ; SLEEP: 20
-Hello from thread 5 out of 6 from process 9 out of 10 on clus12.hpc.local ; SLEEP: 20
-Hello from thread 4 out of 6 from process 9 out of 10 on clus12.hpc.local ; SLEEP: 20
-Hello from thread 3 out of 6 from process 9 out of 10 on clus12.hpc.local ; SLEEP: 20
-Hello from thread 2 out of 6 from process 9 out of 10 on clus12.hpc.local ; SLEEP: 20
-Hello from thread 0 out of 6 from process 8 out of 10 on clus11.hpc.local ; SLEEP: 20
-Hello from thread 5 out of 6 from process 8 out of 10 on clus11.hpc.local ; SLEEP: 20
-Hello from thread 4 out of 6 from process 8 out of 10 on clus11.hpc.local ; SLEEP: 20
-Hello from thread 3 out of 6 from process 8 out of 10 on clus11.hpc.local ; SLEEP: 20
-Hello from thread 2 out of 6 from process 8 out of 10 on clus11.hpc.local ; SLEEP: 20
-Hello from thread 1 out of 6 from process 8 out of 10 on clus11.hpc.local ; SLEEP: 20
-Hello from thread 1 out of 6 from process 4 out of 10 on clus05.hpc.local ; SLEEP: 20
-Hello from thread 1 out of 6 from process 3 out of 10 on clus04.hpc.local ; SLEEP: 20
-Hello from thread 1 out of 6 from process 2 out of 10 on clus03.hpc.local ; SLEEP: 20
-Hello from thread 1 out of 6 from process 5 out of 10 on clus06.hpc.local ; SLEEP: 20
-Hello from thread 1 out of 6 from process 9 out of 10 on clus12.hpc.local ; SLEEP: 20
+[biohpc-28@aolin-login OpenACC]$ nsys stats report3.qdrep 
+Using report3.sqlite for SQL queries.
+Running [/soft/nvidia-hpc-sdk-2021-21.2/Linux_x86_64/21.2/profilers/Nsight_Systems/target-linux-x64/reports/cudaapisum.py report3.sqlite]... 
+
+ Time(%)  Total Time (ns)  Num Calls    Average      Minimum     Maximum            Name        
+ -------  ---------------  ---------  ------------  ----------  ----------  --------------------
+    93,0       12.373.190          1  12.373.190,0  12.373.190  12.373.190  cuMemHostAlloc      
+     3,0          464.805          1     464.805,0     464.805     464.805  cuMemAllocHost_v2   
+     1,0          143.647          3      47.882,0       4.597     127.226  cuMemAlloc_v2       
+     0,0           72.885          1      72.885,0      72.885      72.885  cuModuleLoadDataEx  
+     0,0           54.308          3      18.102,0       7.770      37.462  cuLaunchKernel      
+     0,0           51.429          5      10.285,0       3.761      31.375  cuMemcpyHtoDAsync_v2
+     0,0           25.892          9       2.876,0       1.369       7.266  cuStreamSynchronize 
+     0,0           22.904          3       7.634,0       5.039      11.588  cuMemcpyDtoHAsync_v2
+     0,0           14.429          1      14.429,0      14.429      14.429  cuStreamCreate      
+     0,0            7.129          3       2.376,0       1.387       4.152  cuEventRecord       
+     0,0            3.604          2       1.802,0         362       3.242  cuEventCreate       
+     0,0            2.974          3         991,0         553       1.558  cuEventSynchronize  
+
+Running [/soft/nvidia-hpc-sdk-2021-21.2/Linux_x86_64/21.2/profilers/Nsight_Systems/target-linux-x64/reports/gpukernsum.py report3.sqlite]... 
+
+ Time(%)  Total Time (ns)  Instances  Average  Minimum  Maximum      Name     
+ -------  ---------------  ---------  -------  -------  -------  -------------
+    33,0            2.176          1  2.176,0    2.176    2.176  loop_2_38_gpu
+    33,0            2.144          1  2.144,0    2.144    2.144  loop_1_21_gpu
+    32,0            2.113          1  2.113,0    2.113    2.113  loop_3_55_gpu
+
+Running [/soft/nvidia-hpc-sdk-2021-21.2/Linux_x86_64/21.2/profilers/Nsight_Systems/target-linux-x64/reports/gpumemtimesum.py report3.sqlite]... 
+
+ Time(%)  Total Time (ns)  Operations  Average  Minimum  Maximum      Operation     
+ -------  ---------------  ----------  -------  -------  -------  ------------------
+    58,0            4.576           5    915,0      832    1.120  [CUDA memcpy HtoD]
+    41,0            3.295           3  1.098,0      959    1.376  [CUDA memcpy DtoH]
+
+Running [/soft/nvidia-hpc-sdk-2021-21.2/Linux_x86_64/21.2/profilers/Nsight_Systems/target-linux-x64/reports/gpumemsizesum.py report3.sqlite]... 
+
+Total   Operations  Average  Minimum  Maximum      Operation     
+ ------  ----------  -------  -------  -------  ------------------
+ 19,000           5    3,000    3,000    3,000  [CUDA memcpy HtoD]
+ 11,000           3    3,000    3,000    3,000  [CUDA memcpy DtoH]
+
+Running [/soft/nvidia-hpc-sdk-2021-21.2/Linux_x86_64/21.2/profilers/Nsight_Systems/target-linux-x64/reports/osrtsum.py report3.sqlite]... SKIPPED: report3.sqlite does not contain OS Runtime trace data
+
+Running [/soft/nvidia-hpc-sdk-2021-21.2/Linux_x86_64/21.2/profilers/Nsight_Systems/target-linux-x64/reports/nvtxppsum.py report3.sqlite]... SKIPPED: report3.sqlite does not contain NV Tools Extension (NVTX) data
+
+Running [/soft/nvidia-hpc-sdk-2021-21.2/Linux_x86_64/21.2/profilers/Nsight_Systems/target-linux-x64/reports/openmpevtsum.py report3.sqlite]... SKIPPED: report3.sqlite does not contain OpenMP event data.
 
 
 ```
@@ -72,67 +57,7 @@ Hello from thread 1 out of 6 from process 9 out of 10 on clus12.hpc.local ; SLEE
 
 
 ```ruby
-cpu-bind=MASK - clus01, task  0  0 [41331]: mask 0x1c7 set
-Hello from thread 0 out of 3 from process 0 out of 20 on clus01.hpc.local ; SLEEP: 20
-Hello from thread 2 out of 3 from process 0 out of 20 on clus01.hpc.local ; SLEEP: 20
-Hello from thread 1 out of 3 from process 0 out of 20 on clus01.hpc.local ; SLEEP: 20
-Hello from thread 0 out of 3 from process 1 out of 20 on clus01.hpc.local ; SLEEP: 20
-Hello from thread 2 out of 3 from process 1 out of 20 on clus01.hpc.local ; SLEEP: 20
-Hello from thread 1 out of 3 from process 1 out of 20 on clus01.hpc.local ; SLEEP: 20
-Hello from thread 0 out of 3 from process 5 out of 20 on clus03.hpc.local ; SLEEP: 20
-Hello from thread 2 out of 3 from process 5 out of 20 on clus03.hpc.local ; SLEEP: 20
-Hello from thread 1 out of 3 from process 5 out of 20 on clus03.hpc.local ; SLEEP: 20
-Hello from thread 0 out of 3 from process 6 out of 20 on clus04.hpc.local ; SLEEP: 20
-Hello from thread 2 out of 3 from process 6 out of 20 on clus04.hpc.local ; SLEEP: 20
-Hello from thread 1 out of 3 from process 6 out of 20 on clus04.hpc.local ; SLEEP: 20
-Hello from thread 0 out of 3 from process 8 out of 20 on clus05.hpc.local ; SLEEP: 20
-Hello from thread 2 out of 3 from process 8 out of 20 on clus05.hpc.local ; SLEEP: 20
-Hello from thread 1 out of 3 from process 8 out of 20 on clus05.hpc.local ; SLEEP: 20
-Hello from thread 0 out of 3 from process 19 out of 20 on clus12.hpc.local ; SLEEP: 20
-Hello from thread 2 out of 3 from process 19 out of 20 on clus12.hpc.local ; SLEEP: 20
-Hello from thread 1 out of 3 from process 19 out of 20 on clus12.hpc.local ; SLEEP: 20
-Hello from thread 0 out of 3 from process 14 out of 20 on clus08.hpc.local ; SLEEP: 20
-Hello from thread 2 out of 3 from process 14 out of 20 on clus08.hpc.local ; SLEEP: 20
-Hello from thread 1 out of 3 from process 14 out of 20 on clus08.hpc.local ; SLEEP: 20
-Hello from thread 0 out of 3 from process 16 out of 20 on clus11.hpc.local ; SLEEP: 20
-Hello from thread 2 out of 3 from process 16 out of 20 on clus11.hpc.local ; SLEEP: 20
-Hello from thread 1 out of 3 from process 16 out of 20 on clus11.hpc.local ; SLEEP: 20
-Hello from thread 0 out of 3 from process 3 out of 20 on clus02.hpc.local ; SLEEP: 20
-Hello from thread 2 out of 3 from process 3 out of 20 on clus02.hpc.local ; SLEEP: 20
-Hello from thread 1 out of 3 from process 3 out of 20 on clus02.hpc.local ; SLEEP: 20
-Hello from thread 0 out of 3 from process 10 out of 20 on clus06.hpc.local ; SLEEP: 20
-Hello from thread 2 out of 3 from process 10 out of 20 on clus06.hpc.local ; SLEEP: 20
-Hello from thread 1 out of 3 from process 10 out of 20 on clus06.hpc.local ; SLEEP: 20
-Hello from thread 0 out of 3 from process 13 out of 20 on clus07.hpc.local ; SLEEP: 20
-Hello from thread 2 out of 3 from process 13 out of 20 on clus07.hpc.local ; SLEEP: 20
-Hello from thread 1 out of 3 from process 13 out of 20 on clus07.hpc.local ; SLEEP: 20
-Hello from thread 0 out of 3 from process 18 out of 20 on clus12.hpc.local ; SLEEP: 20
-Hello from thread 2 out of 3 from process 18 out of 20 on clus12.hpc.local ; SLEEP: 20
-Hello from thread 1 out of 3 from process 18 out of 20 on clus12.hpc.local ; SLEEP: 20
-Hello from thread 0 out of 3 from process 15 out of 20 on clus08.hpc.local ; SLEEP: 20
-Hello from thread 2 out of 3 from process 15 out of 20 on clus08.hpc.local ; SLEEP: 20
-Hello from thread 0 out of 3 from process 17 out of 20 on clus11.hpc.local ; SLEEP: 20
-Hello from thread 2 out of 3 from process 17 out of 20 on clus11.hpc.local ; SLEEP: 20
-Hello from thread 1 out of 3 from process 17 out of 20 on clus11.hpc.local ; SLEEP: 20
-Hello from thread 0 out of 3 from process 2 out of 20 on clus02.hpc.local ; SLEEP: 20
-Hello from thread 2 out of 3 from process 2 out of 20 on clus02.hpc.local ; SLEEP: 20
-Hello from thread 1 out of 3 from process 2 out of 20 on clus02.hpc.local ; SLEEP: 20
-Hello from thread 0 out of 3 from process 11 out of 20 on clus06.hpc.local ; SLEEP: 20
-Hello from thread 2 out of 3 from process 11 out of 20 on clus06.hpc.local ; SLEEP: 20
-Hello from thread 1 out of 3 from process 11 out of 20 on clus06.hpc.local ; SLEEP: 20
-Hello from thread 0 out of 3 from process 12 out of 20 on clus07.hpc.local ; SLEEP: 20
-Hello from thread 2 out of 3 from process 12 out of 20 on clus07.hpc.local ; SLEEP: 20
-Hello from thread 0 out of 3 from process 4 out of 20 on clus03.hpc.local ; SLEEP: 20
-Hello from thread 2 out of 3 from process 4 out of 20 on clus03.hpc.local ; SLEEP: 20
-Hello from thread 1 out of 3 from process 4 out of 20 on clus03.hpc.local ; SLEEP: 20
-Hello from thread 0 out of 3 from process 7 out of 20 on clus04.hpc.local ; SLEEP: 20
-Hello from thread 2 out of 3 from process 7 out of 20 on clus04.hpc.local ; SLEEP: 20
-Hello from thread 1 out of 3 from process 7 out of 20 on clus04.hpc.local ; SLEEP: 20
-Hello from thread 0 out of 3 from process 9 out of 20 on clus05.hpc.local ; SLEEP: 20
-Hello from thread 2 out of 3 from process 9 out of 20 on clus05.hpc.local ; SLEEP: 20
-Hello from thread 1 out of 3 from process 9 out of 20 on clus05.hpc.local ; SLEEP: 20
-Hello from thread 1 out of 3 from process 15 out of 20 on clus08.hpc.local ; SLEEP: 20
-Hello from thread 1 out of 3 from process 12 out of 20 on clus07.hpc.local ; SLEEP: 20
+
 
 
 ```
