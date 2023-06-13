@@ -1,27 +1,21 @@
 # Biophysics
 
 ```ruby
-aolin23.uab.es
+aolin24.uab.es
 *****************************************
 WARNING: loops and any of its children processes will be profiled.
 
 Collecting data...
-
-The target application terminated with signal 4 (SIGILL)
 Processing events...
-Saving temporary "/tmp/nsys-report-aba0-a14b-ffdc-d6d0.qdstrm" file to disk...
+Saving temporary "/tmp/nsys-report-3b72-912c-086e-9fdd.qdstrm" file to disk...
 Creating final output files...
 
 ^MProcessing [0%                                                                
-]^MProcessing [==============================50%                                 
+]^MProcessing [====12%                                                           
+]^MProcessing [===============================53%                               
+]^MProcessing [===========================================================94%   
 ]^MProcessing [==============================================================100%]
-^MProcessing 
-[============================48%                                   
-]^MProcessing [=============================================74%                  
-]^MProcessing [==============================================================99% 
-]^MProcessing [==============================================================100%]
-Saved report file to "/tmp/nsys-report-aba0-a14b-ffdc-d6d0.qdrep"
-
+Saved report file to "/tmp/nsys-report-3b72-912c-086e-9fdd.qdrep"
 
 ```
 
