@@ -2,11 +2,65 @@
 
 ```ruby
 
+#!/usr/bin/env python3
+import subprocess
+
 # Function to submit a SLURM job and return its job ID
 def submit_job(script):
-    result = subprocess.run(["sbatch", script], capture_output=True, text=True)
-    job_id = result.stdout.strip().split()[-1]  # Extract the last field which contains the job ID
+    result = subprocess.run(["sbatch", "--parsable", script], capture_output=True, text=True)
+    job_id = result.stdout.strip()
     return job_id
+
+# Number of intermediate jobs (10 < n < 30)
+n = 20
+
+# Job 1 (Initial Job)
+job1_script = "job1.sh"
+job1_content = """
+#!/bin/bash
+#SBATCH -J job1
+#SBATCH -o job1.out
+#SBATCH -e job1.err
+
+# Job 1 commands here
+"""
+with open(job1_script, "w") as f:
+    f.write(job1_content)
+
+job1_id = submit_job(job1_script)
+
+# Intermediate Jobs (Job Array)
+job_array_script = "job_array.sh"
+job_array_content = f"""
+#!/bin/bash
+#SBATCH -J job_array
+#SBATCH -o job_array.out
+#SBATCH -e job_array.err
+#SBATCH --dependency=afterok:{job1_id}
+#SBATCH --array=1-{n}
+
+# Intermediate Job commands here
+"""
+with open(job_array_script, "w") as f:
+    f.write(job_array_content)
+
+job_array_id = submit_job(job_array_script)
+
+# Final Job
+job_final_script = "job_final.sh"
+job_final_content = f"""
+#!/bin/bash
+#SBATCH -J job_final
+#SBATCH -o job_final.out
+#SBATCH -e job_final.err
+#SBATCH --dependency=afterok:{job_array_id}
+
+# Final Job commands here
+"""
+with open(job_final_script, "w") as f:
+    f.write(job_final_content)
+
+submit_job(job_final_script)
 
 
 ```
