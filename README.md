@@ -1,24 +1,5 @@
 # Biophysics
 
-```ruby
-aolin24.uab.es
-*****************************************
-WARNING: loops and any of its children processes will be profiled.
-
-Collecting data...
-Processing events...
-Saving temporary "/tmp/nsys-report-3b72-912c-086e-9fdd.qdstrm" file to disk...
-Creating final output files...
-
-^MProcessing [0%                                                                
-]^MProcessing [====12%                                                           
-]^MProcessing [===============================53%                               
-]^MProcessing [===========================================================94%   
-]^MProcessing [==============================================================100%]
-Saved report file to "/tmp/nsys-report-3b72-912c-086e-9fdd.qdrep"
-
-```
-
 Here is the source code for an exercise about the **evaluation energy Spike RBD-ACE2 protein-protein interface analysis** using Jupyter-notebook. The objective of this project was to evaluate the contribution of each of the interface residues to the interaction energy in a specific protein-protein complex. 
 
 ## Index
