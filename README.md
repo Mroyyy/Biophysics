@@ -29,22 +29,24 @@ with open(job1_script, "w") as f:
 
 job1_id = submit_job(job1_script)
 
-# Intermediate Jobs (Job Array)
-job_array_script = "job_array.sh"
-job_array_content = f"""
+# Intermediate Jobs (Submitted individually)
+intermediate_ids = []
+for i in range(1, n+1):
+    job_intermediate_script = f"job_intermediate_{i}.sh"
+    job_intermediate_content = f"""
 #!/bin/bash
-#SBATCH -J job_array
-#SBATCH -o job_array.out
-#SBATCH -e job_array.err
+#SBATCH -J job_intermediate_{i}
+#SBATCH -o job_intermediate_{i}.out
+#SBATCH -e job_intermediate_{i}.err
 #SBATCH --dependency=afterok:{job1_id}
-#SBATCH --array=1-{n}
 
-# Intermediate Job commands here
+# Intermediate Job {i} commands here
 """
-with open(job_array_script, "w") as f:
-    f.write(job_array_content)
+    with open(job_intermediate_script, "w") as f:
+        f.write(job_intermediate_content)
 
-job_array_id = submit_job(job_array_script)
+    intermediate_id = submit_job(job_intermediate_script)
+    intermediate_ids.append(intermediate_id)
 
 # Final Job
 job_final_script = "job_final.sh"
@@ -53,7 +55,7 @@ job_final_content = f"""
 #SBATCH -J job_final
 #SBATCH -o job_final.out
 #SBATCH -e job_final.err
-#SBATCH --dependency=afterok:{job_array_id}
+#SBATCH --dependency=afterok:{":".join(intermediate_ids)}
 
 # Final Job commands here
 """
